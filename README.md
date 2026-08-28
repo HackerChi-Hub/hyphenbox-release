@@ -10,7 +10,7 @@
 
 当前版本：
 
-- `0.2.0` macOS Apple Silicon 预发行版；
+- `0.3.0` macOS Apple Silicon 预发行版；
 - Windows 安装包尚未完成真实构建验收；
 - Intel Mac 安装包尚未发布；
 - macOS 当前为 ad-hoc 开发签名，尚未完成 Developer ID 正式签名和苹果公证。
@@ -18,7 +18,7 @@
 当前 DMG SHA-256：
 
 ```text
-635a6242d98cb4cc50bfe007979bc7e354bbb0f856d7ba612cc89049688196b2
+01d8ae43609c92eaca9fed5e8685b60dd8bc69e53182ae2673d80ad65a1694ae
 ```
 
 对应的 `.sha256` 文件会作为同一 GitHub Release 的下载资产提供。下载后校验值不一致时不要安装。
