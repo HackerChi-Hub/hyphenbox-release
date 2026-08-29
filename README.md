@@ -18,7 +18,7 @@
 
 当前只保留最新版：
 
-- `0.4.1` macOS Apple Silicon（最低 macOS 13）；
+- `0.4.3` macOS Apple Silicon（最低 macOS 13）；
 - Windows 安装包尚未完成真实构建验收；
 - Intel Mac 安装包尚未发布；
 - macOS 当前为 ad-hoc 开发签名，尚未完成 Developer ID 正式签名和苹果公证。
@@ -26,7 +26,7 @@
 当前 DMG SHA-256：
 
 ```text
-b4de43f93fcc947bcdd5bcf5d791e910df09b040f59cec20d30fb5d5eaafe62e
+e2dc8bd1694688a5969ece872009cf8273e61ff5b1f1ea9495132d4ba654e65b
 ```
 
 对应的 `.sha256` 文件会作为同一 GitHub Release 的下载资产提供。下载后校验值不一致时不要安装。
@@ -49,13 +49,15 @@ b4de43f93fcc947bcdd5bcf5d791e910df09b040f59cec20d30fb5d5eaafe62e
 
 ```json
 { "app": "hyphenbox", "device_hash": "<64 位十六进制>",
-  "version": "0.4.1", "platform": "macos", "arch": "aarch64", "day": 20694 }
+  "version": "0.4.3", "platform": "macos", "arch": "aarch64", "day": 20694 }
 ```
 
 不上报 API Key、提示词、模型回答、用量数字、文件路径、用户名或 IP，
 **也不上报你用了哪些提供商或哪些模型**——那等于暴露你在哪些平台有账号。
 `device_hash` 是系统机器 ID 加本应用专属命名空间后的 SHA-256，无法与其他软件的统计关联。
 应用内会直接展示即将发送的完整载荷本身，而不是文字描述。
+
+统计后台只展示聚合计数（设备总数、活跃数、版本与平台分布），需要口令查看，不公开。
 
 ## 数据更新边界
 
