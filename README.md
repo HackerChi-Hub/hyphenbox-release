@@ -8,9 +8,9 @@
 
 安装包统一从 [GitHub Releases](https://github.com/HackerChi-Hub/hyphenbox-release/releases) 下载，DMG、EXE 和 MSI 不直接提交进 Git 历史。
 
-当前版本：
+当前只保留最新版：
 
-- `0.3.1` macOS Apple Silicon 预发行版；
+- `0.3.2` macOS Apple Silicon 预发行版；
 - Windows 安装包尚未完成真实构建验收；
 - Intel Mac 安装包尚未发布；
 - macOS 当前为 ad-hoc 开发签名，尚未完成 Developer ID 正式签名和苹果公证。
@@ -18,7 +18,7 @@
 当前 DMG SHA-256：
 
 ```text
-1ce6aade6d427422b852db43a766fd9e16e1f64e8498fa29015dd0c2e8ed22d8
+a4222fe117c8513e6768b3ce0bd43d87f7279fb9630b618db6640e042f443349
 ```
 
 对应的 `.sha256` 文件会作为同一 GitHub Release 的下载资产提供。下载后校验值不一致时不要安装。
