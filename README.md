@@ -18,7 +18,7 @@
 
 当前只保留最新版：
 
-- `0.4.5` macOS Apple Silicon（最低 macOS 13）；
+- `0.4.7` macOS Apple Silicon（最低 macOS 13）；
 - Windows 安装包尚未完成真实构建验收；
 - Intel Mac 安装包尚未发布；
 - macOS 当前为 ad-hoc 开发签名，尚未完成 Developer ID 正式签名和苹果公证。
@@ -26,7 +26,7 @@
 当前 DMG SHA-256：
 
 ```text
-7a46a19ad5a833d82636f40159f807239704fa7252127aa218a10c8d3f644e2e
+351a460f4108084803e18f157bac625a4f7b499fdba35fad7fab4081d35c63e7
 ```
 
 对应的 `.sha256` 文件会作为同一 GitHub Release 的下载资产提供。下载后校验值不一致时不要安装。
@@ -49,7 +49,7 @@
 
 ```json
 { "app": "hyphenbox", "device_hash": "<64 位十六进制>",
-  "version": "0.4.5", "platform": "macos", "arch": "aarch64", "day": 20694 }
+  "version": "0.4.7", "platform": "macos", "arch": "aarch64", "day": 20694 }
 ```
 
 不上报 API Key、提示词、模型回答、用量数字、文件路径、用户名或 IP，
