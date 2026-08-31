@@ -3,7 +3,7 @@
 > **免费大模型 API 雷达 + 本地统一路由。** 收录 103 家免费 API，实测哪些还活着；
 > 你的 Key 只存在自己电脑里，一个本地接口接进 Cursor / Cline / OpenCode。
 >
-> 当前阶段：**初步构建 · 预览版**（macOS universal + Windows x64）。功能在快速迭代，
+> 当前阶段：**初步构建 · 预览版**（macOS universal + Windows x64 + Linux x64）。功能在快速迭代，
 > 界面与行为以最新版本为准。
 
 ![今日免费池](screenshots/dashboard.png)
@@ -42,8 +42,8 @@ Cursor / Cline 给可粘贴指引；本地令牌屏幕上默认打码：
 
 ## 下载安装
 
-- **[下载最新版](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)**：macOS 选 `HyphenBox_x.y.z_universal.dmg`（约 10 MB，Intel/Apple 芯片通用）；Windows 选 `HyphenBox_x.y.z_x64-setup.exe`（约 3.5 MB，另有 MSI 版）
-- 要求：macOS 13 及以上，或 Windows 10/11 x64
+- **[下载最新版](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)**：macOS 选 `HyphenBox_x.y.z_universal.dmg`（约 10 MB，Intel/Apple 芯片通用）；Windows 选 `HyphenBox_x.y.z_x64-setup.exe`（另有 MSI）；Linux 选 AppImage（另有 deb/rpm，需桌面密钥环）
+- 要求：macOS 13 及以上 / Windows 10/11 x64 / Linux x64（桌面发行版）
 - 每个 Release 附 `.sha256` 校验文件；免费下载，无注册、无账号体系
 
 ### 首次打开
