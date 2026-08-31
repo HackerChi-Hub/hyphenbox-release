@@ -3,7 +3,7 @@
 > **免费大模型 API 雷达 + 本地统一路由。** 收录 103 家免费 API，实测哪些还活着；
 > 你的 Key 只存在自己电脑里，一个本地接口接进 Cursor / Cline / OpenCode。
 >
-> 当前阶段：**初步构建 · 预览版**（macOS Apple Silicon）。功能在快速迭代，
+> 当前阶段：**初步构建 · 预览版**（macOS universal：Apple Silicon 与 Intel 同一个包）。功能在快速迭代，
 > 界面与行为以最新版本为准。
 
 ![今日免费池](screenshots/dashboard.png)
@@ -42,8 +42,8 @@ Cursor / Cline 给可粘贴指引；本地令牌屏幕上默认打码：
 
 ## 下载安装
 
-- **[下载最新版](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)**（`HyphenBox_x.y.z_aarch64.dmg`，约 5 MB）
-- 要求：macOS 13 及以上，Apple Silicon；Windows 与 Intel 版还在构建
+- **[下载最新版](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)**（`HyphenBox_x.y.z_universal.dmg`，约 10 MB，双架构）
+- 要求：macOS 13 及以上（Apple Silicon 与 Intel 都行）；Windows 版还在构建
 - 每个 Release 附 `.sha256` 校验文件；免费下载，无注册、无账号体系
 
 ### 首次打开
@@ -91,7 +91,7 @@ Cursor / Cline 给可粘贴指引；本地令牌屏幕上默认打码：
 
 ## 如实声明
 
-- **预览版**：只有 Apple 芯片一个包；自签名证书需手动放行一次
+- **预览版**：自签名证书需手动放行一次；Windows 版还没有
 - **免费额度随时会变**：软件能做的是每天替你重测一遍，不能保证你申请时额度还在
 - 「免费 Key」只指你从官方渠道自行领取的凭据；共享账号、Key 池、绕额度中转一律不收录
 
