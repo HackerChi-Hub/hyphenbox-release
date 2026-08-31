@@ -3,7 +3,7 @@
 > **免费大模型 API 雷达 + 本地统一路由。** 收录 103 家免费 API，实测哪些还活着；
 > 你的 Key 只存在自己电脑里，一个本地接口接进 Cursor / Cline / OpenCode。
 >
-> 当前阶段：**初步构建 · 预览版**（macOS universal：Apple Silicon 与 Intel 同一个包）。功能在快速迭代，
+> 当前阶段：**初步构建 · 预览版**（macOS universal + Windows x64）。功能在快速迭代，
 > 界面与行为以最新版本为准。
 
 ![今日免费池](screenshots/dashboard.png)
@@ -42,8 +42,8 @@ Cursor / Cline 给可粘贴指引；本地令牌屏幕上默认打码：
 
 ## 下载安装
 
-- **[下载最新版](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)**（`HyphenBox_x.y.z_universal.dmg`，约 10 MB，双架构）
-- 要求：macOS 13 及以上（Apple Silicon 与 Intel 都行）；Windows 版还在构建
+- **[下载最新版](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)**：macOS 选 `HyphenBox_x.y.z_universal.dmg`（约 10 MB，Intel/Apple 芯片通用）；Windows 选 `HyphenBox_x.y.z_x64-setup.exe`（约 3.5 MB，另有 MSI 版）
+- 要求：macOS 13 及以上，或 Windows 10/11 x64
 - 每个 Release 附 `.sha256` 校验文件；免费下载，无注册、无账号体系
 
 ### 首次打开
@@ -91,7 +91,7 @@ Cursor / Cline 给可粘贴指引；本地令牌屏幕上默认打码：
 
 ## 如实声明
 
-- **预览版**：自签名证书需手动放行一次；Windows 版还没有
+- **预览版**：两个平台都没有商业代码签名证书，首次打开要手动放行一次（macOS 右键打开；Windows SmartScreen 点「更多信息 → 仍要运行」）。想自证没被掉包：对照 Release 里的 `.sha256`，或看 [Actions 构建日志](https://github.com/HackerChi-Hub/hyphenbox/actions)。Windows 版暂不含自动更新，需手动下载新版覆盖安装
 - **免费额度随时会变**：软件能做的是每天替你重测一遍，不能保证你申请时额度还在
 - 「免费 Key」只指你从官方渠道自行领取的凭据；共享账号、Key 池、绕额度中转一律不收录
 
