@@ -59,12 +59,12 @@ Cursor / Cline 给可粘贴指引；本地令牌屏幕上默认打码：
 
 ## 自动更新
 
-macOS 版启动时会检查
+顶栏「一键更新」同时检查两样东西：签名目录（验签通过自动套用，不用发版）和应用新版本。
+macOS 版走应用内自动更新：读取
 `https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest/download/latest.json`，
 更新包使用离线私钥签名，客户端内置公钥验签后才会应用。
-
-Windows 与 Linux 版不含应用内自动更新（更新器签名私钥不上 CI）：应用内会直接给出「打开下载页」，
-新版本手动下载覆盖安装即可。
+Windows 与 Linux 版暂不含应用内自动更新（更新器签名私钥不上 CI）：「一键更新」会比对线上版本号，
+有新版时给出「下载」按钮，手动下载覆盖安装即可。
 
 ### 排障日志
 
