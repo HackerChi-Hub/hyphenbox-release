@@ -63,8 +63,8 @@ Cursor / Cline 给可粘贴指引；本地令牌屏幕上默认打码：
 macOS 版走应用内自动更新：读取
 `https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest/download/latest.json`，
 更新包使用离线私钥签名，客户端内置公钥验签后才会应用。
-Windows 与 Linux 版暂不含应用内自动更新（更新器签名私钥不上 CI）：「一键更新」会比对线上版本号，
-有新版时给出「下载」按钮，手动下载覆盖安装即可。
+0.4.60 起 Windows 与 Linux 也走应用内自动更新：安装包由 CI 构建后在离线机器上用同一把私钥签名再发布，
+客户端验签通过才安装（更早版本会提示手动下载）。
 
 ### 排障日志
 
@@ -102,7 +102,7 @@ Windows 与 Linux 版暂不含应用内自动更新（更新器签名私钥不�
 
 ## 如实声明
 
-- **预览版**：两个平台都没有商业代码签名证书，首次打开要手动放行一次（macOS 右键打开；Windows SmartScreen 点「更多信息 → 仍要运行」）。想自证没被掉包：对照 Release 里的 `.sha256`，或看 [Actions 构建日志](https://github.com/HackerChi-Hub/hyphenbox/actions)。Windows 与 Linux 版暂不含自动更新，应用内会提示手动下载新版覆盖安装；Windows 版不会弹出额外的控制台窗口
+- **预览版**：两个平台都没有商业代码签名证书，首次打开要手动放行一次（macOS 右键打开；Windows SmartScreen 点「更多信息 → 仍要运行」）。想自证没被掉包：对照 Release 里的 `.sha256`，或看 [Actions 构建日志](https://github.com/HackerChi-Hub/hyphenbox/actions)。三平台均可应用内自动更新（0.4.60 起）；Windows 版不会弹出额外的控制台窗口
 - **免费额度随时会变**：软件能做的是每天替你重测一遍，不能保证你申请时额度还在
 - 「免费 Key」只指你从官方渠道自行领取的凭据；共享账号、Key 池、绕额度中转一律不收录
 
