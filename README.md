@@ -42,7 +42,9 @@ Cursor / Cline 给可粘贴指引；本地令牌屏幕上默认打码：
 
 ## 下载安装
 
-- **[下载最新版](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)**：macOS 选 `HyphenBox_x.y.z_universal.dmg`（约 10 MB，Intel/Apple 芯片通用）；Windows 选 `HyphenBox_x.y.z_x64-setup.exe`（另有 MSI）；Linux 选 AppImage（另有 deb/rpm，需桌面密钥环）
+- **[Windows 0.4.68 安装包](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v0.4.68/HyphenBox_0.4.68_x64-setup.exe)**：常规安装，另有 MSI。
+- **[Linux 0.4.68 下载](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v0.4.68)**：AppImage / deb / rpm，x64，需桌面密钥环。
+- **[macOS 0.4.67 通用包](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v0.4.67/HyphenBox_0.4.67_universal.dmg)**：Intel / Apple 芯片通用；0.4.68 Mac 包待维护者手动构建后补充。
 - 要求：macOS 13 及以上 / Windows 10/11 x64 / Linux x64（桌面发行版）
 - 每个 Release 附 `.sha256` 校验文件；免费下载，无注册、无账号体系
 
@@ -59,7 +61,8 @@ Cursor / Cline 给可粘贴指引；本地令牌屏幕上默认打码：
 
 ## 自动更新
 
-当前发行 **0.4.67**：macOS 通用 DMG、Windows x64 安装程序 / MSI、Linux x64 AppImage / DEB / RPM 同步发布。
+Windows / Linux **0.4.68** 已提供手动下载，修复额度冷却、自检及空回答换路。此批安装件尚无更新器签名。
+当前自动更新入口继续提供完整签名发行 **0.4.67**；待 0.4.68 Mac 包与离线签名补齐后再切换，避免影响现有 Mac 用户。
 源码仓库与数据目录保持私有，本仓库只提供下载、说明与更新元数据。
 
 顶栏「一键更新」同时检查两样东西：签名目录（验签通过自动套用，不用发版）和应用新版本。
@@ -105,7 +108,7 @@ macOS 版走应用内自动更新：读取
 
 ## 如实声明
 
-- **预览版与签名**：macOS 使用固定本地签名，未做 Apple 公证；Windows 安装包没有商业代码签名，可能出现 SmartScreen 提示。三平台的更新载荷均有独立的更新器签名，客户端用内置公钥验证；这不等于商业代码签名或公证。手动下载可核对 Release 中的 `.sha256`。Windows / Linux 支持范围是 x64，macOS 通用包覆盖 Apple 芯片与 Intel
+- **预览版与签名**：macOS 使用固定本地签名，未做 Apple 公证；Windows 安装包没有商业代码签名，可能出现 SmartScreen 提示。完整自动更新发行由独立更新器签名保护；本次 0.4.68 Windows / Linux 仅手动下载，尚无更新器签名。手动下载可核对 Release 中的 `.sha256`。Windows / Linux 支持范围是 x64，macOS 通用包覆盖 Apple 芯片与 Intel
 - **免费额度随时会变**：来源定期采集，实测取决于可用凭据和提供商状态；软件不会把网页零价等同于每个账号都能用，也不能保证你申请时额度仍在
 - 「免费 Key」只指你从官方渠道自行领取的凭据；共享账号、Key 池、绕额度中转一律不收录
 
