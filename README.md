@@ -2,9 +2,17 @@
 
 免费 AI API 雷达、本机模型核验与统一路由。把分散的平台信息、自己申请的密钥和核验通过的模型放在一起，用一个本地接口接入 OpenCode、Cursor、Cline 或兼容客户端。
 
-**黑粉盒子已经正式推出，开始正式迭代。当前正式发行版为 1.0.0，支持 macOS、Windows 与 Linux。**
+**黑粉盒子已经正式推出，开始正式迭代。当前正式发行版为 1.0.0。已提供的平台安装件见下方实际下载表。**
 
 [下载最新版](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest) · [1.0.0 发行说明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.0) · [反馈问题](https://github.com/HackerChi-Hub/hyphenbox-release/issues)
+
+## 本版更新
+
+- 保留私有签名目录、本地密钥保险箱、模型实测和本机兼容路由的现有能力。
+- AMD Radeon Cloud、Ollama 云服务和 Vercel AI Gateway 的官方条件已在
+  `2026.09.29.1` 私有目录的候选区纠正；三家均未通过账户级生成验证，
+  **不进入自动免费路由**。
+- 版本校验现在拒绝多位段、缺段和预发行后缀；打包与发布前会检查配置及锁文件一致性。
 
 ![黑粉盒子 1.0.0：今日免费池与本地统一接口](screenshots/dashboard.png)
 
@@ -53,13 +61,16 @@
 
 ## 下载安装
 
-[最新版下载入口](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)会随正式发行更新。下面是当前 **1.0.0** 的安装件：
+[最新版下载入口](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)会随正式发行更新。下面是当前 **1.0.0** 实际已上传的安装件；未列出的平台不代表已有本版安装包：
 
 | 系统 | 安装包 | 要求 |
 |---|---|---|
 | macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_universal.dmg) | macOS 13 及以上，Apple 芯片 / Intel |
-| Windows | [常规安装 EXE](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_x64-setup.exe) · [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_x64_en-US.msi) | Windows 10 / 11，x64 |
-| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_amd64.AppImage) · [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_amd64.deb) · [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox-1.0.0-1.x86_64.rpm) | x64 桌面发行版，需要可用的系统密钥环 / Secret Service |
+| Windows | [常规安装 EXE](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_x64-setup.exe) | Windows 10 / 11，x64 |
+| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_x64_en-US.msi) | Windows 10 / 11，x64 |
+| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_amd64.AppImage) | x64 桌面发行版，需要系统密钥环 / Secret Service |
+| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_amd64.deb) | x64 桌面发行版，需要系统密钥环 / Secret Service |
+| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox-1.0.0-1.x86_64.rpm) | x64 桌面发行版，需要系统密钥环 / Secret Service |
 
 软件免费下载，不需要注册黑粉盒子账号；调用平台 API 通常仍需自行注册平台账户和申请凭据。部分平台需要国际网络，地区、实名、支付与额度条件以平台官方要求为准。
 
@@ -85,7 +96,7 @@
 
 顶栏「一键更新」检查签名目录和软件新版本。目录更新通过验证后独立应用，不要求每次都发新安装包；应用升级读取公开发行页的更新清单。
 
-当前 1.0.0 发行已经提供 macOS、Windows 与 Linux 安装件、更新器签名及更新清单。更新包使用离线私钥签名，客户端用内置公钥验证后才应用。若旧版无法自动升级，可从最新版入口手动安装。
+安装件与更新清单以本版发行页为准。更新包使用离线私钥签名，客户端用内置公钥验证后才应用。若某个平台暂未提供更新器条目，或旧版无法自动升级，可从发行页手动下载该平台已有的安装件。
 
 ## 隐私与公开边界
 
