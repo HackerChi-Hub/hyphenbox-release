@@ -1,13 +1,18 @@
 <!-- evergreen:intro:start -->
+![HyphenBox · HyphenTech](screenshots/readme-hero.svg)
+
 # 黑粉盒子 HyphenBox · 免费 AI API 雷达、模型核验与统一接口
 
 **找到合适的免费 AI 接口，用自己的密钥测通，再接入常用 AI 编程工具。**
 
 黑粉盒子是黑粉科技开发的桌面 AI API 管理工具，把免费资源发现、本机密钥保险箱、模型核验和本地统一路由放在一起。适合寻找免费大模型 API、管理多个提供商，或给 OpenCode、Cursor、Cline 配置兼容接口的用户。资源条件有官方证据与核对日期；模型是否能用，以你自己的账户和真实请求为准。
 
-[**立即下载黑粉盒子**](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest) · [黑粉科技官网](https://hyphentech.top) · [反馈问题](https://github.com/HackerChi-Hub/hyphenbox-release/issues)
 
 软件免费下载，不需注册黑粉盒子账号。平台密钥需自行申请，部分平台需要国际网络；免费额度、地区和账户条件以平台为准。
+
+<p align="center"><a href="README.md">简体中文</a> | <a href="README.zh-TW.md">繁體中文</a> | <a href="README.en.md">English</a></p>
+
+<p align="center"><a href="https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest"><img alt="立即下载" src="https://img.shields.io/badge/立即下载-18181b?style=for-the-badge&amp;logo=github" /></a> <a href="https://hyphentech.top"><img alt="官网" src="https://img.shields.io/badge/官网-334155?style=for-the-badge" /></a></p>
 <!-- evergreen:intro:end -->
 
 <!-- recent-features:start -->
@@ -19,6 +24,18 @@
 - **0.4.69** · 更新随包免费 API 目录，并恢复每日签名目录发布，让资源信息及时刷新。
 - **0.4.69** · 本地健康接口随目录换版实时更新版本，避免把已更新目录误报为旧数据。
 <!-- recent-features:end -->
+
+<!-- evergreen:demos:start -->
+## ▶ 使用演示
+
+**密钥保存、OpenCode 配置写入与 MCP 实测；YouTube 为完整介绍**
+
+| Bilibili | YouTube |
+| :---: | :---: |
+| [![B 站观看](https://img.shields.io/badge/Bilibili-00a1d6?style=for-the-badge&logo=bilibili&logoColor=white)](https://www.bilibili.com/video/BV1Hutu6KEoW/) | [![YouTube 观看](https://img.shields.io/badge/YouTube-ff0033?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=EQlq59rqQ0I) |
+
+视频演示的是拍摄时的版本；安装包与当前功能以本页正式发行信息为准。视频为中文讲解。
+<!-- evergreen:demos:end -->
 
 **当前正式版：1.0.0** · [发行说明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.0)
 
@@ -84,6 +101,7 @@
 
 软件免费下载，不需要注册黑粉盒子账号；调用平台 API 通常仍需自行注册平台账户和申请凭据。部分平台需要国际网络，地区、实名、支付与额度条件以平台官方要求为准。
 
+<!-- evergreen:installation-privacy:start -->
 ### 三步开始使用
 
 1. 在「免费 API」查看资源条件，到平台官方入口申请自己的密钥，再存入「密钥保险箱」。
@@ -125,6 +143,8 @@
 - Linux：`~/.local/share/top.hyphentech.hyphenbox/logs/hyphenbox.log`
 
 日志有认证信息脱敏处理，但提交前仍请检查内容。**不要把完整密钥、令牌、账号信息、私人对话或私有服务地址放进 Issue、日志附件和截图。**
+<!-- evergreen:installation-privacy:end -->
+
 
 ---
 

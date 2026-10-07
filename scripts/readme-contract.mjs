@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 export function recentBlock(file, version, language = 'zh-CN') {
   const data = JSON.parse(readFileSync(file, 'utf8'));
   if (data.reviewed_version !== version) throw Error(`请复核近期功能：${data.reviewed_version} != ${version}`);
-  const items = data.languages?.[language] ?? data.items;
+  const items = data.languages ? data.languages[language] : language === 'zh-CN' ? data.items : undefined;
   if (!Array.isArray(items) || items.length !== 5 || new Set(items.map(x => x.text)).size !== 5) throw Error('近期功能必须为最近 5 个不重复的用户可见改进');
   for (const item of items) {
     if (!/^\d+\.\d+\.\d+$/.test(item.version) || !item.text?.trim() || /\n/.test(item.text)) throw Error('近期功能格式不正确');

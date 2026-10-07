@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="300" viewBox="0 0 1280 300" role="img" aria-label="HyphenBox by HyphenTech">
+ <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#111827"/><stop offset="1" stop-color="#1e293b"/></linearGradient><linearGradient id="accent"><stop stop-color="#ffbb65"/><stop offset="1" stop-color="#ffffff"/></linearGradient></defs>
+ <rect width="1280" height="300" rx="24" fill="url(#bg)"/>
+ <circle cx="1120" cy="-40" r="260" fill="#ffbb65" opacity=".07"/><circle cx="1200" cy="300" r="180" fill="#ffbb65" opacity=".06"/>
+ <path d="M44 40H1236" stroke="#ffffff" opacity=".1"/>
+ <text x="64" y="79" fill="#ffbb65" font-family="Arial,sans-serif" font-size="17" letter-spacing="5">HYPHENTECH · DESKTOP SOFTWARE</text>
+ <text x="60" y="167" fill="#f8fafc" font-family="Arial,sans-serif" font-weight="700" font-size="70" letter-spacing="-2">HyphenBox</text>
+ <text x="64" y="220" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="19" letter-spacing="2">DISCOVER / VERIFY / CONNECT</text>
+ <rect x="64" y="255" width="116" height="5" rx="2.5" fill="#ffbb65"/>
+ <g transform="translate(1000 145)"><rect x="-75" y="-75" width="150" height="150" rx="36" fill="#ffbb65" opacity=".10" stroke="#ffbb65" stroke-width="2"/><rect x="-53" y="-53" width="106" height="106" rx="24" fill="none" stroke="#ffbb65" stroke-width="2" opacity=".45"/>
+ <path d="M-18-29L30 0-18 29Z" fill="url(#accent)"/>
+ <circle cx="-75" cy="0" r="5" fill="#ffbb65"/><circle cx="75" cy="0" r="5" fill="#ffbb65"/>
+ </g></svg>

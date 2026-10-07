@@ -2,10 +2,32 @@
   "files": {
     "README.md": {
       "blocks": {
-        "intro": "eefdb3fef93f008f58166cda2e703a0df8957ce342c3bf4e41af29860dcfa829",
+        "intro": "7b94a806e252de8f3c0d9aab2c91c1c02ba20ceeeb6c576b84155577da2b22d9",
+        "demos": "c3f6d5e4b8f97e2b160ef866491bc5f85282a583e7e92c7fb7ed209aa774b0e7",
         "capabilities": "0f49664337fd5a9cc8ce67487d5a0a9621593f88ec437d542416da3d52ffc492",
+        "installation-privacy": "dfafdf43ea61da0cef4a424af0355c2c8cbde8a29679c45a275dd375da693370",
         "use-cases": "6732bc8de61f629e76f19f6acd2ddb8670a6501d2bb7b7282c68f648c11af3b1",
         "discovery": "7310d6155907cb41b64c59ff96c04a3a8c4ee2ff5c5cfcb99560db8e0f0dee2f"
+      }
+    },
+    "README.zh-TW.md": {
+      "blocks": {
+        "intro": "1bd9849d0324da56488a4fb8ea8ce1189243e8bc474afb737519b1680dcec1a0",
+        "demos": "459b5b4c0b3b957e103552f56ef8ecd046f6db5af142c5a33a33b4f09ac495cb",
+        "capabilities": "41b46de8f014e42f2bed8ad7f4fb97e36c17a3c8df0c9d14df10031972c5c3c1",
+        "installation-privacy": "65612abacb5d5e970fd64bfecc038d043228960e87d0a4c44d22927fae8fbc9b",
+        "use-cases": "d2463449e0ee672f82b8800ef58bad8de79bc0cc1967662019b385b0ec2d162f",
+        "discovery": "fff39ef93672ff8490f345078f3bea5e479362a9c7c7255245076924dfb54749"
+      }
+    },
+    "README.en.md": {
+      "blocks": {
+        "intro": "16f167f7bb9e3546312cb6ece68492f2ce655e05dfe5001b05b66ddafe29877e",
+        "demos": "0bbd0c163592de161f29d78d6522e9f1136108deb501c3b78b180f5451b266a3",
+        "capabilities": "254e8fb8f51d78049cc376de1fce46b12de3e9c17aea65e770ce9d4fbc3226c7",
+        "installation-privacy": "7db61a9361097260c8b6f48905a6a16cfaf4ca21b6f71cf2c985e20d13a50b45",
+        "use-cases": "213c3da720076299fdeb28d007bd301c0266f9e4176ad95724517dc72aaad4e1",
+        "discovery": "4ba989ca146ee3940fbe0304b7333c909596a9bd198c3a89916aee36ae192dab"
       }
     }
   }
