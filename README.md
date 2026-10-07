@@ -1,23 +1,32 @@
-# 黑粉盒子 HyphenBox
+<!-- evergreen:intro:start -->
+# 黑粉盒子 HyphenBox · 免费 AI API 雷达、模型核验与统一接口
 
-免费 AI API 雷达、本机模型核验与统一路由。把分散的平台信息、自己申请的密钥和核验通过的模型放在一起，用一个本地接口接入 OpenCode、Cursor、Cline 或兼容客户端。
+**找到合适的免费 AI 接口，用自己的密钥测通，再接入常用 AI 编程工具。**
 
-**黑粉盒子已经正式推出，开始正式迭代。当前正式发行版为 1.0.0。已提供的平台安装件见下方实际下载表。**
+黑粉盒子是黑粉科技开发的桌面 AI API 管理工具，把免费资源发现、本机密钥保险箱、模型核验和本地统一路由放在一起。适合寻找免费大模型 API、管理多个提供商，或给 OpenCode、Cursor、Cline 配置兼容接口的用户。资源条件有官方证据与核对日期；模型是否能用，以你自己的账户和真实请求为准。
 
-[下载最新版](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest) · [1.0.0 发行说明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.0) · [反馈问题](https://github.com/HackerChi-Hub/hyphenbox-release/issues)
+[**立即下载黑粉盒子**](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest) · [黑粉科技官网](https://hyphentech.top) · [反馈问题](https://github.com/HackerChi-Hub/hyphenbox-release/issues)
 
-## 本版更新
+软件免费下载，不需注册黑粉盒子账号。平台密钥需自行申请，部分平台需要国际网络；免费额度、地区和账户条件以平台为准。
+<!-- evergreen:intro:end -->
 
-- 保留私有签名目录、本地密钥保险箱、模型实测和本机兼容路由的现有能力。
-- AMD Radeon Cloud、Ollama 云服务和 Vercel AI Gateway 的官方条件已在
-  `2026.09.29.1` 私有目录的候选区纠正；三家均未通过账户级生成验证，
-  **不进入自动免费路由**。
-- 版本校验现在拒绝多位段、缺段和预发行后缀；打包与发布前会检查配置及锁文件一致性。
+<!-- recent-features:start -->
+## 近期新增与改进（最近 5 项）
+
+- **1.0.0** · 进入正式迭代，提供 macOS 通用包、Windows 与 Linux 安装件。
+- **1.0.0** · 免费 API 雷达区分资料卡与待核验候选，展示官方条件和核对日期。
+- **1.0.0** · 自己的密钥在本机拉取模型并发送真实请求核验，向量模型按用途验证。
+- **1.0.0** · 本地统一接口提供 free 与 auto 选路、多密钥尝试、冷却和故障切换。
+- **1.0.0** · 一键连接与最近调用诊断，帮助核对客户端连通性、输出预算和结束原因。
+<!-- recent-features:end -->
+
+**当前正式版：1.0.0** · [发行说明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.0)
 
 ![黑粉盒子 1.0.0：今日免费池与本地统一接口](screenshots/dashboard.png)
 
 截图拍摄于 2026 年 10 月 4 日，来自 macOS 上实际运行的 1.0.0 正式版。提供商、模型与用量数字是拍摄时这台电脑的状态，不是所有用户默认可用的数量；资料卡与待核验候选也不等于全部实测通过。
 
+<!-- evergreen:capabilities:start -->
 ## 它能做什么
 
 免费清单解决“到哪里找”，却不能回答“我这把密钥现在能不能用”。黑粉盒子把资源发现和本机调用分开处理：先看官方条件，再用自己的账户核验，最后接入客户端。
@@ -58,6 +67,7 @@
 - 手选模型：明确指定某条路线；该模型是否支持工具、上下文长度及输出限制，仍受上游约束。
 
 遇到限流、额度不足或服务错误，路由器会按错误分类冷却并尝试其他合格候选。全部候选不可用时会如实返回错误。已经向客户端输出内容的流式请求不会被承诺无缝换成另一个模型；软件也不能凭空恢复平台额度。
+<!-- evergreen:capabilities:end -->
 
 ## 下载安装
 
@@ -119,3 +129,43 @@
 ---
 
 黑粉科技 · [更多自制软件与文章](https://github.com/HackerChi-Hub)
+
+<!-- evergreen:use-cases:start -->
+## 适合哪些需求
+
+| 需求 | 使用方法 |
+| --- | --- |
+| 找免费大模型 API | 按免费类型、额度、申请门槛和核对日期筛选官方资源 |
+| 给 AI 编程工具配置接口 | 使用一键连接指引，配置本地统一地址与令牌 |
+| 管理多平台模型和密钥 | 自己申请密钥，在本机保存、拉取模型并真实核验 |
+| 处理限流或输出截断 | 看最近调用诊断，再核对路线、预算、结束原因和平台限制 |
+
+## 常见问题
+
+**免费 API 是永久无限使用吗？** 不是。免费档、试用与限时活动不同，平台可以调整权益；目录信息也不等于你的账户已通过调用验证。
+
+**只想用免费路线该怎么选？** 使用 `free`。`auto` 可能调用你已添加的付费路线，费用仍受所选提供商规则约束。
+
+**是本地大模型运行器吗？** 黑粉盒子主要管理提供商 API 与统一路由；需要在电脑上运行模型，可使用方寸智匣。
+
+**会替我申请账号和密钥吗？** 不会。申请、地区与身份条件按平台官方要求完成，再用自己的凭据核验。
+<!-- evergreen:use-cases:end -->
+
+<!-- evergreen:discovery:start -->
+## 黑粉科技自制软件
+
+按需求选用，也可以组合使用：本地模型交给方寸智匣，云端接口交给黑粉盒子，录制教程用黑粉录屏，影视英语学习用光影词库。
+
+| 软件 | 适合解决的问题 | 官方下载 |
+| --- | --- | --- |
+| 方寸智匣 LocalBrain | 本地大模型、文件与媒体工作台 | [下载方寸智匣](https://github.com/HackerChi-Hub/localbrain-releases) |
+| 黑粉录屏 HyphenScreen | 屏幕录制、教程剪辑、字幕与动画 | [下载黑粉录屏](https://github.com/HackerChi-Hub/HyphenScreen-Releases) |
+| 光影词库 ScreenLex | 看电影学英语、字幕查词、生词复习 | [下载光影词库](https://github.com/HackerChi-Hub/screenlex-download) |
+| 黑粉盒子 HyphenBox | 免费 AI API 发现、模型核验与统一接口 | [下载黑粉盒子](https://github.com/HackerChi-Hub/hyphenbox-release) |
+
+## 分享与反馈
+
+分享给朋友时，请复制本仓库首页或[官方网站](https://hyphentech.top)，让对方按自己的系统下载当前安装包。欢迎收藏仓库、点亮 Star，或在本仓库 Issues 提交使用体验、需求和脱敏问题。
+
+关注[哔哩哔哩「黑粉科技」](https://space.bilibili.com/1846717524)、[YouTube 黑粉科技频道](https://www.youtube.com/@hyphentech_top)；公众号和视频号搜索「黑粉科技」，查看实际演示与使用教程。
+<!-- evergreen:discovery:end -->

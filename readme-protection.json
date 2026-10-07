@@ -1,0 +1,12 @@
+{
+  "files": {
+    "README.md": {
+      "blocks": {
+        "intro": "eefdb3fef93f008f58166cda2e703a0df8957ce342c3bf4e41af29860dcfa829",
+        "capabilities": "0f49664337fd5a9cc8ce67487d5a0a9621593f88ec437d542416da3d52ffc492",
+        "use-cases": "6732bc8de61f629e76f19f6acd2ddb8670a6501d2bb7b7282c68f648c11af3b1",
+        "discovery": "7310d6155907cb41b64c59ff96c04a3a8c4ee2ff5c5cfcb99560db8e0f0dee2f"
+      }
+    }
+  }
+}
