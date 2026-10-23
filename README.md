@@ -5,7 +5,7 @@
 
 **找到合适的免费 AI 接口，用自己的密钥测通，再接入常用 AI 编程工具。**
 
-黑粉盒子是黑粉科技开发的桌面 AI API 管理工具，把免费资源发现、本机密钥保险箱、模型核验和本地统一路由放在一起。适合寻找免费大模型 API、管理多个提供商，或给 OpenCode、Cursor、Cline 配置兼容接口的用户。资源条件有官方证据与核对日期；模型是否能用，以你自己的账户和真实请求为准。
+黑粉盒子是黑粉科技开发的桌面 AI API 管理工具，把免费资源发现、本机密钥保险箱、模型核验和本地统一路由放在一起。适合寻找免费大模型 API、管理多个提供商，或给 DeepSeek Harness、Cursor、Cline 配置兼容接口的用户。资源条件有官方证据与核对日期；模型是否能用，以你自己的账户和真实请求为准。
 
 
 软件免费下载，不需注册黑粉盒子账号。平台密钥需自行申请，部分平台需要国际网络；免费额度、地区和账户条件以平台为准。
@@ -18,17 +18,17 @@
 <!-- recent-features:start -->
 ## 近期新增与改进（最近 5 项）
 
+- **1.0.1** · 一键连接切换为 DeepSeek Harness 原生适配，移除旧客户端的配置写入、缓存清理与运行入口。
+- **1.0.1** · Harness 接入新增可撤销的受管配置层，保留原有提供商与会话，只传递本机令牌；有免费候选时新会话默认 free。
+- **1.0.1** · 三平台首页常驻随包赞助码，取消用量门槛，不依赖网络或异步检测。
+- **1.0.1** · 统计设置收为默认折叠的「提升使用体验」，展开可查看真实范围并关闭，保留既有选择。
 - **1.0.0** · 纠正近期免费资源候选的官方条件，未经账户级生成验证的候选不会进入自动免费路由。
-- **0.4.70** · 新增非弹窗的自愿赞助板块，累计用量达到门槛后出现，不影响功能使用。
-- **0.4.70** · 累计用量数字去掉多余的尾随小数零，保留真实有效小数。
-- **0.4.69** · 更新随包免费 API 目录，并恢复每日签名目录发布，让资源信息及时刷新。
-- **0.4.69** · 本地健康接口随目录换版实时更新版本，避免把已更新目录误报为旧数据。
 <!-- recent-features:end -->
 
 <!-- evergreen:demos:start -->
 ## ▶ 使用演示
 
-**密钥保存、OpenCode 配置写入与 MCP 实测；YouTube 为完整介绍**
+**早期版本的密钥保存、客户端配置与 MCP 演示；YouTube 为完整介绍。视频不展示新版 Harness 接入。**
 
 | Bilibili | YouTube |
 | :---: | :---: |
@@ -37,11 +37,11 @@
 视频演示的是拍摄时的版本；安装包与当前功能以本页正式发行信息为准。视频为中文讲解。
 <!-- evergreen:demos:end -->
 
-**当前正式版：1.0.0** · [发行说明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.0)
+**当前正式版：1.0.1** · [发行说明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.1)
 
-![黑粉盒子 1.0.0：今日免费池与本地统一接口](screenshots/dashboard.png)
+![黑粉盒子 1.0.1：今日免费池与本地统一接口](screenshots/dashboard.png)
 
-截图拍摄于 2026 年 10 月 4 日，来自 macOS 上实际运行的 1.0.0 正式版。提供商、模型与用量数字是拍摄时这台电脑的状态，不是所有用户默认可用的数量；资料卡与待核验候选也不等于全部实测通过。
+截图拍摄于 2026 年 10 月 24 日，来自 macOS 上实际运行的 1.0.1 正式版。提供商、模型与用量数字是拍摄时这台电脑的状态，不是所有用户默认可用的数量；资料卡与待核验候选也不等于全部实测通过。
 
 <!-- evergreen:capabilities:start -->
 ## 它能做什么
@@ -55,7 +55,8 @@
 | 模型发现与核验 | 用自己的密钥拉取模型列表，筛选免费模型、批量加入并发送最小真实请求；对话和向量模型按用途验证，不把向量模型拿去做聊天测试 |
 | 费用与能力标识 | 区分完全免费、免费额度、扣余额、价格未知和自费；展示核验状态、工具调用能力等信息，未知价格不会自动算免费 |
 | 本地统一路由 | 只监听 `127.0.0.1`，提供兼容接口、多密钥尝试、限流冷却和故障切换；免费路线与一般自动路线分开 |
-| 客户端接入 | OpenCode 配置可备份后写入、可撤销；Cursor、Cline 和兼容 SDK 提供可复制参数及接入指引 |
+| 客户端接入 | DeepSeek Harness 配置可备份后写入、可撤销；Cursor、Cline 和兼容 SDK 提供可复制参数及接入指引 |
+| 自愿赞助 | 三平台首页直接显示随包赞助码，不依赖用量或网络；赞助不解锁功能，也不影响免费使用 |
 | 调用诊断与统计 | 查看本机请求与词元用量；最近调用诊断显示输出预算、结束原因等信息，帮助区分输出长度限制、限流和上游错误 |
 | 独立目录更新 | 软件定期读取受控的签名目录，验证签名、版本和文件哈希；更新资源信息不必重新下载安装包 |
 
@@ -73,7 +74,9 @@
 
 ### 一键连接
 
-统一地址是 `http://127.0.0.1:17688/v1`，客户端使用黑粉盒子的本地统一令牌，不需要逐个平台填写上游密钥。OpenCode 可以直接写入配置并撤销；其他客户端按应用内指引手动填写。面向智能体客户端的模型列表会筛掉已实测不支持工具调用的路线。
+统一地址是 `http://127.0.0.1:17688/v1`，客户端使用黑粉盒子的本地统一令牌，不需要逐个平台填写上游密钥。DeepSeek Harness 可以直接写入配置并撤销；其他客户端按应用内指引手动填写。面向智能体客户端的模型列表会筛掉已实测不支持工具调用的路线。
+
+Harness 使用官方原生 OpenAI 适配。写入只追加黑粉盒子的受管配置层，并在用户环境文件中保存本机令牌，不复制上游密钥；原有提供商与私人会话保留。首次连接后请新启 Harness 进程、建立新会话；已有会话的模型选择不变。存在免费候选时默认选择 `free`，`auto` 可能使用已添加的付费路线。撤销会移除这层配置及其令牌，不删除其他配置或会话。
 
 ![一键连接：回环地址、默认遮罩令牌与真实连通性自检](screenshots/connect.png)
 
@@ -88,16 +91,13 @@
 
 ## 下载安装
 
-[最新版下载入口](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)会随正式发行更新。下面是当前 **1.0.0** 实际已上传的安装件；未列出的平台不代表已有本版安装包：
+[最新版下载入口](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)会随正式发行更新。下面是当前 **1.0.1** 实际已上传的安装件；未列出的平台不代表已有本版安装包：
 
 | 系统 | 安装包 | 要求 |
 |---|---|---|
-| macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_universal.dmg) | macOS 13 及以上，Apple 芯片 / Intel |
-| Windows | [常规安装 EXE](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_x64-setup.exe) | Windows 10 / 11，x64 |
-| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_x64_en-US.msi) | Windows 10 / 11，x64 |
-| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_amd64.AppImage) | x64 桌面发行版，需要系统密钥环 / Secret Service |
-| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_amd64.deb) | x64 桌面发行版，需要系统密钥环 / Secret Service |
-| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox-1.0.0-1.x86_64.rpm) | x64 桌面发行版，需要系统密钥环 / Secret Service |
+| macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.1/HyphenBox_1.0.1_universal.dmg) | macOS 13 及以上，Apple 芯片 / Intel |
+
+Harness 接入和新版赞助显示从 **1.0.1** 起提供，请核对所下载平台的版本。尚无本版安装件的平台，可在[完整发行列表](https://github.com/HackerChi-Hub/hyphenbox-release/releases)查看已有版本；1.0.0 不含这些调整。
 
 软件免费下载，不需要注册黑粉盒子账号；调用平台 API 通常仍需自行注册平台账户和申请凭据。部分平台需要国际网络，地区、实名、支付与额度条件以平台官方要求为准。
 
@@ -131,6 +131,7 @@
 - 平台密钥保存在本机系统凭据存储中。本地统一令牌保存在应用数据目录，用于本机回环接口鉴权。
 - 模型调用从本机发往所选提供商，必要的认证信息、提示词与回答**不经过黑粉盒子的目录或统计服务器**。提供商仍会收到调用数据，请阅读其隐私政策。
 - 匿名版本统计默认开启，可在应用内关闭；每个 UTC 日最多上报一次，字段包含匿名设备哈希、软件版本、系统、架构与日期，不包含密钥、对话、用量或所用提供商和模型。
+- 开关位于「一键连接 → 提升使用体验」，默认折叠；展开可查看统计范围、状态并关闭，不改变你已有的选择。
 - 本仓库只公开下载、说明、截图与更新元数据。**源码、免费资源目录、原始采集与核验资料、私有服务配置、签名私钥均不在此公开。**
 - 不采集或分享泄露密钥，不提供共享账户或绕过额度限制的密钥池。“免费 API”指平台允许的免费权益，不是永久可用保证。
 
