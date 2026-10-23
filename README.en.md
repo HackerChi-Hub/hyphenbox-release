@@ -5,7 +5,7 @@
 
 **Find suitable AI APIs, test them with your own credentials, and connect them to your coding tools.**
 
-HyphenBox is a desktop API management application by HyphenTech. It combines a resource radar, a local credential vault, model verification and a unified local endpoint. Use it to compare free API conditions, manage providers and connect OpenCode, Cursor, Cline or compatible clients. Resource cards include official evidence and review dates; availability is determined by real requests from your own account.
+HyphenBox is a desktop API management application by HyphenTech. It combines a resource radar, a local credential vault, model verification and a unified local endpoint. Use it to compare free API conditions, manage providers and connect DeepSeek Harness, Cursor, Cline or compatible clients. Resource cards include official evidence and review dates; availability is determined by real requests from your own account.
 
 The application is free to download and requires no HyphenBox account. Apply for your own provider accounts and credentials. Some providers require international network access; regional, identity, payment and quota conditions are set by each provider.
 
@@ -17,17 +17,17 @@ The application is free to download and requires no HyphenBox account. Apply for
 <!-- recent-features:start -->
 ## Recent features and improvements (5 items)
 
+- **1.0.1** · Replaced the retired client integration with native DeepSeek Harness setup; removed legacy configuration, cache-cleanup and execution paths.
+- **1.0.1** · Harness setup uses an undoable managed layer, preserves existing providers and sessions, and passes only the local token; new sessions default to free when eligible candidates exist.
+- **1.0.1** · The bundled sponsorship QR code stays visible on all three platforms without a usage, network or asynchronous detection gate.
+- **1.0.1** · Statistics settings are collapsed under Improve user experience; expand for the real reporting scope and opt-out. Existing preferences are preserved.
 - **1.0.0** · Corrected official free-tier conditions; candidates without a verified request from your own account do not enter the free pool.
-- **0.4.70** · Sponsorship prompts remain passive and do not gate application features.
-- **0.4.70** · Large-number displays no longer append an unnecessary .0.
-- **0.4.69** · Updated the bundled catalog and restored daily signed catalog publishing.
-- **0.4.69** · The health endpoint now reports the active catalog version immediately.
 <!-- recent-features:end -->
 
 <!-- evergreen:demos:start -->
 ## ▶ Watch a practical demo
 
-**Bilibili: saving keys, OpenCode configuration and an MCP test. YouTube: full introduction**
+**Earlier-version demos of keys, client configuration and MCP. YouTube has the full introduction; these videos do not demonstrate the new Harness integration.**
 
 | Bilibili | YouTube |
 | :---: | :---: |
@@ -36,7 +36,7 @@ The application is free to download and requires no HyphenBox account. Apply for
 These videos show the versions available when recorded. Use the current release information on this page for downloads and capabilities. Narration is in Chinese.
 <!-- evergreen:demos:end -->
 
-**Current stable release: 1.0.0** · [Release notes](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.0)
+**Current stable release: 1.0.1** · [Release notes](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.1)
 
 ## Download and install
 
@@ -44,16 +44,13 @@ The [latest release](https://github.com/HackerChi-Hub/hyphenbox-release/releases
 
 | System | Installer | Requirements |
 |---|---|---|
-| macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_universal.dmg) | macOS 13+, Apple Silicon / Intel |
-| Windows | [EXE installer](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_x64-setup.exe) | Windows 10 / 11, x64 |
-| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_x64_en-US.msi) | Windows 10 / 11, x64 |
-| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_amd64.AppImage) | x64 desktop Linux; system keyring / Secret Service required |
-| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox_1.0.0_amd64.deb) | x64 desktop Linux; system keyring / Secret Service required |
-| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.0/HyphenBox-1.0.0-1.x86_64.rpm) | x64 desktop Linux; system keyring / Secret Service required |
+| macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.1/HyphenBox_1.0.1_universal.dmg) | macOS 13+, Apple Silicon / Intel |
+
+Harness integration and the updated sponsorship display require **1.0.1**. Check the version offered for your platform. If this version is not yet available for your platform, see the [full release list](https://github.com/HackerChi-Hub/hyphenbox-release/releases) for existing downloads; 1.0.0 does not include these changes.
 
 ![HyphenBox dashboard, Chinese application UI](screenshots/dashboard.png)
 
-Screenshots were captured on 2026-10-04 from the actual macOS 1.0.0 stable release. Provider, model and usage counts describe that captured session, not quantities guaranteed to every user. Resource cards and unverified candidates are not successful local tests. Documentation translations do not imply a translated application UI.
+Screenshots were captured on 2026-10-24 from the actual macOS 1.0.1 stable release. Provider, model and usage counts describe that captured session, not quantities guaranteed to every user. Resource cards and unverified candidates are not successful local tests. Documentation translations do not imply a translated application UI.
 
 <!-- evergreen:capabilities:start -->
 ## What HyphenBox does
@@ -65,7 +62,8 @@ Screenshots were captured on 2026-10-04 from the actual macOS 1.0.0 stable relea
 | Model verification | Fetch models with your credentials, select free candidates and send small real requests; verify chat and embedding models with their respective endpoints |
 | Cost and capability labels | Separate fully free, limited free quota, balance deductions, unknown prices and paid usage; unknown prices do not automatically qualify as free |
 | Local routing | Listen only on `127.0.0.1`; provide a compatible endpoint, multiple-key attempts, rate-limit cooldown and failover |
-| Client setup | Back up, write and undo OpenCode configuration; provide copyable settings and instructions for Cursor, Cline and compatible SDKs |
+| Client setup | Back up, write and undo DeepSeek Harness configuration; provide copyable settings and instructions for Cursor, Cline and compatible SDKs |
+| Optional sponsorship | The bundled QR code is directly visible on all three platforms without a usage or network gate; sponsorship does not unlock features |
 | Diagnostics | Inspect local requests, token usage, output budgets and finish reasons to distinguish truncation, rate limits and upstream errors |
 | Independent catalog updates | Verify the controlled catalog's signatures, version and file hashes before applying resource updates without reinstalling the app |
 
@@ -83,7 +81,9 @@ Model lists come from your credentials; local verification determines usable rou
 
 ### Connect a client
 
-Use `http://127.0.0.1:17688/v1` and HyphenBox's local unified token instead of entering every upstream key in the client. OpenCode configuration can be written and undone; other clients use the in-app instructions. Agent-facing model lists exclude routes tested as lacking tool calling.
+Use `http://127.0.0.1:17688/v1` and HyphenBox's local unified token instead of entering every upstream key in the client. DeepSeek Harness configuration can be written and undone; other clients use the in-app instructions. Agent-facing model lists exclude routes tested as lacking tool calling.
+
+Harness uses its official native OpenAI adapter. HyphenBox appends a managed configuration layer and saves only the loopback token in the Harness-home environment file, not upstream keys. Existing providers and private sessions are preserved. Start a new Harness process and session after the initial connection; existing sessions retain their own model selections. New sessions default to `free` when eligible free candidates exist; `auto` may use paid routes you added. Undo removes only the managed layer and its token.
 
 ![Client setup and actual connectivity check](screenshots/connect.png)
 
@@ -122,6 +122,7 @@ The top-bar update control checks both the signed catalog and application releas
 - Provider keys stay in the local system credential store. The local unified token stays in the app data directory and authenticates the loopback endpoint.
 - Requests go directly from your computer to the chosen provider. Keys, prompts and responses do not pass through HyphenBox's catalog or statistics servers. The provider still receives request data and applies its own privacy policy.
 - Anonymous version statistics are enabled by default and can be disabled. At most once per UTC day, the app reports an anonymous device hash, version, OS, architecture and date. It does not report credentials, conversations, usage or selected providers/models.
+- The control is collapsed by default under Client Setup → Improve user experience. Expand it to inspect the scope and state or disable reporting; your existing preference is preserved.
 - This repository contains downloads, documentation, screenshots and update metadata. Application source, the resource catalog, raw research/probe data, private service settings and signing private keys are not public here.
 - HyphenBox does not collect leaked keys, distribute shared accounts or bypass quotas. “Free API” means a provider-authorized entitlement, not permanent availability.
 <!-- evergreen:installation-privacy:end -->
