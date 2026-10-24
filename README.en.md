@@ -45,8 +45,13 @@ The [latest release](https://github.com/HackerChi-Hub/hyphenbox-release/releases
 | System | Installer | Requirements |
 |---|---|---|
 | macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_universal.dmg) | macOS 13+, Apple Silicon / Intel |
+| Windows | [EXE installer](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_x64-setup.exe) | Windows 10 / 11, x64 |
+| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_x64_en-US.msi) | Windows 10 / 11, x64 |
+| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_amd64.AppImage) | x64 desktop Linux; system keyring / Secret Service required |
+| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_amd64.deb) | x64 desktop Linux; system keyring / Secret Service required |
+| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox-1.0.3-1.x86_64.rpm) | x64 desktop Linux; system keyring / Secret Service required |
 
-This **1.0.3** release provides the universal macOS package. Windows and Linux **1.0.2** installers are available on the [v1.0.2 release page](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.2). Harness integration began in 1.0.1; 1.0.2 adds credential-read backoff, structured quota-error recognition and conditional tool-checkpoint continuation, but not this release's expanded free-candidate traversal. The shared application Keychain item is a macOS improvement; Windows and Linux retain their own system secure-storage backends.
+Version **1.0.3** now provides macOS, Windows and Linux installers with expanded free-candidate traversal and the credential, quota and tool-checkpoint improvements from 1.0.2. The `free` route explores eligible candidates within a five-minute pre-connection budget, up to 60 seconds per attempt; `auto` retains its bounded failover behavior. The shared application Keychain item is specific to macOS; Windows/Linux retain their system secure-storage backends.
 
 These Windows/Linux installers include the signed built-in catalog without a preconfigured online catalog service. Model verification, routing and requests still work with your own keys; online catalog refresh requires a separately configured controlled service.
 
