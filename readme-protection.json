@@ -4,7 +4,7 @@
       "blocks": {
         "intro": "057fa1bc66e5ccdf9d4aa39a3dbdc8d7898fcd5fd3555633695f74ac7d3ee1f0",
         "demos": "c3168d5cf8799f047bba45883a658de0fb53c2e91f7b7619575971c718c146d8",
-        "capabilities": "b0e194a9bfc093e124391a28a76907b3bd3041b06dc2c4e2329465bd4edf0bcd",
+        "capabilities": "b328562f177bb03c409df0c26ec36ffd08d1899f978a4a10c29a86ba46b1a569",
         "installation-privacy": "3dab9ade81c1c491bc9e03a417fcddf5114b824b12c079a712cc106a89d18a2b",
         "use-cases": "6732bc8de61f629e76f19f6acd2ddb8670a6501d2bb7b7282c68f648c11af3b1",
         "discovery": "7310d6155907cb41b64c59ff96c04a3a8c4ee2ff5c5cfcb99560db8e0f0dee2f"
@@ -14,7 +14,7 @@
       "blocks": {
         "intro": "2eb329141154838725022e98af2f365769147a1daad26d92665a98486698ab3e",
         "demos": "b2924a250dd5985ecde6fb370b5963548ab0d57381a7377c4a9f899d8add28fc",
-        "capabilities": "2c9e50d2cc4a299af9a4653b054d6754068f26881ab5590bd0de030b51578515",
+        "capabilities": "dee93097e657089532a0ba85fde73dc37e9269a9f938503a6625f6edd1c9423b",
         "installation-privacy": "ba4c0662d37387b7be8c4de79c3764e323c689f0d152197a2f08fd8d6129d18e",
         "use-cases": "d2463449e0ee672f82b8800ef58bad8de79bc0cc1967662019b385b0ec2d162f",
         "discovery": "fff39ef93672ff8490f345078f3bea5e479362a9c7c7255245076924dfb54749"
@@ -24,7 +24,7 @@
       "blocks": {
         "intro": "43257746ccf235cc64dc0043ca4e8e9aa7a562bfca7c984b71caf6c2c12b7419",
         "demos": "a147bfcc68c4a4c9a63eb171042de5a5d152a7b35bde18263812c6050f2c7ad9",
-        "capabilities": "59db0a09857a7cbb71e7d4c951fdaf310f0ea4c3bd2a35ceb6dd5299fc56d17d",
+        "capabilities": "5c99e06d15b09d5517f7679c138964a3d2228434afc99d8e6a900fd90f2eef27",
         "installation-privacy": "03ac9bbaa988c49f1ab4f38db2f8b77da74c5c2ed2d188ea22a036c19a3001d4",
         "use-cases": "213c3da720076299fdeb28d007bd301c0266f9e4176ad95724517dc72aaad4e1",
         "discovery": "4ba989ca146ee3940fbe0304b7333c909596a9bd198c3a89916aee36ae192dab"
