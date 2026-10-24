@@ -53,6 +53,8 @@ The [latest release](https://github.com/HackerChi-Hub/hyphenbox-release/releases
 
 Version **1.0.2** now offers macOS, Windows and Linux installers. Harness integration began in 1.0.1; this release adds credential-read backoff, structured quota-error recognition and conditional tool-checkpoint continuation. The shared application Keychain item is a macOS improvement; Windows and Linux retain their own system secure-storage backends.
 
+These Windows/Linux installers include the signed built-in catalog without a preconfigured online catalog service. Model verification, routing and requests still work with your own keys; online catalog refresh requires a separately configured controlled service.
+
 ![HyphenBox dashboard, Chinese application UI](screenshots/dashboard.png)
 
 Screenshots were captured on 2026-10-24 from the actual macOS 1.0.2 stable release. Provider, model and usage counts describe that captured session, not quantities guaranteed to every user. Resource cards and unverified candidates are not successful local tests. Documentation translations do not imply a translated application UI.
