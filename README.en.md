@@ -17,11 +17,11 @@ The application is free to download and requires no HyphenBox account. Apply for
 <!-- recent-features:start -->
 ## Recent features and improvements (5 items)
 
+- **1.0.3** · free no longer stops at a fixed route-hop or credential count; eligible free candidates are explored within the wait budget.
+- **1.0.3** · Pre-output waits are bounded to five minutes total and 60 seconds per attempt without cutting off valid streams already started.
+- **1.0.3** · Local free eligibility is rechecked before dispatch; credentials or models changed to paid are skipped, not used as automatic fallbacks.
+- **1.0.3** · Routing history shows candidate counts, elapsed time and whether routing connected, exhausted candidates or ran out of wait budget.
 - **1.0.2** · A shared macOS application vault and foreground authorization, coalesced reads and failure backoff reduce repeated password prompts.
-- **1.0.2** · Automatic routing isolates unreadable credentials and tries eligible alternatives without mislabelling local authorization failures as exhausted quotas.
-- **1.0.2** · Structured quota errors wrapped in HTTP 200 are recognized; normal answers and content refusals are not quota errors.
-- **1.0.2** · Complete tool results can form an executed checkpoint for failover continuation without replaying old tool calls.
-- **1.0.2** · Client Setup shows recent routing and tool-checkpoint records with routes, attempt counts and sanitized failure categories.
 <!-- recent-features:end -->
 
 <!-- evergreen:demos:start -->
@@ -36,7 +36,7 @@ The application is free to download and requires no HyphenBox account. Apply for
 These videos show the versions available when recorded. Use the current release information on this page for downloads and capabilities. Narration is in Chinese.
 <!-- evergreen:demos:end -->
 
-**Current stable release: 1.0.2** · [Release notes](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.2)
+**Current stable release: 1.0.3** · [Release notes](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.3)
 
 ## Download and install
 
@@ -44,20 +44,15 @@ The [latest release](https://github.com/HackerChi-Hub/hyphenbox-release/releases
 
 | System | Installer | Requirements |
 |---|---|---|
-| macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_universal.dmg) | macOS 13+, Apple Silicon / Intel |
-| Windows | [EXE installer](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_x64-setup.exe) | Windows 10 / 11, x64 |
-| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_x64_en-US.msi) | Windows 10 / 11, x64 |
-| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_amd64.AppImage) | x64 desktop Linux; system keyring / Secret Service required |
-| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_amd64.deb) | x64 desktop Linux; system keyring / Secret Service required |
-| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox-1.0.2-1.x86_64.rpm) | x64 desktop Linux; system keyring / Secret Service required |
+| macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_universal.dmg) | macOS 13+, Apple Silicon / Intel |
 
-Version **1.0.2** now offers macOS, Windows and Linux installers. Harness integration began in 1.0.1; this release adds credential-read backoff, structured quota-error recognition and conditional tool-checkpoint continuation. The shared application Keychain item is a macOS improvement; Windows and Linux retain their own system secure-storage backends.
+This **1.0.3** release provides the universal macOS package. Windows and Linux **1.0.2** installers are available on the [v1.0.2 release page](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.2). Harness integration began in 1.0.1; 1.0.2 adds credential-read backoff, structured quota-error recognition and conditional tool-checkpoint continuation, but not this release's expanded free-candidate traversal. The shared application Keychain item is a macOS improvement; Windows and Linux retain their own system secure-storage backends.
 
 These Windows/Linux installers include the signed built-in catalog without a preconfigured online catalog service. Model verification, routing and requests still work with your own keys; online catalog refresh requires a separately configured controlled service.
 
 ![HyphenBox dashboard, Chinese application UI](screenshots/dashboard.png)
 
-Screenshots were captured on 2026-10-24 from the actual macOS 1.0.2 stable release. Provider, model and usage counts describe that captured session, not quantities guaranteed to every user. Resource cards and unverified candidates are not successful local tests. Documentation translations do not imply a translated application UI.
+Screenshots were captured on 2026-10-24 from the actual macOS 1.0.3 stable release. Provider, model and usage counts describe that captured session, not quantities guaranteed to every user. Resource cards and unverified candidates are not successful local tests. Documentation translations do not imply a translated application UI.
 
 <!-- evergreen:capabilities:start -->
 ## What HyphenBox does
@@ -101,6 +96,12 @@ Harness uses its official native OpenAI adapter. HyphenBox appends a managed con
 - An explicit model: select a particular route; upstream context, output and tool limitations still apply.
 
 The router cools down failing routes and tries eligible alternatives. It returns an error if none work. A streaming response that already emitted content is not guaranteed to switch seamlessly to another model, and the software cannot restore an exhausted provider quota.
+### Explore eligible free candidates instead of stopping at a fixed count (1.0.3+)
+
+When the client selects `free`, routing no longer stops at the old fixed route-hop or four-credential limit. It continues through added, verified, enabled free candidates suitable for the request, preferring previously untried providers when changing routes. Cooling, unauthorized, unsuitable or no-longer-free candidates are skipped according to current state. Local free eligibility is rechecked before dispatch; paid credentials and chargeable models are not automatic fallbacks.
+
+The pre-output budget is five minutes in total and up to 60 seconds per attempt. Once valid streamed output begins, this routing budget does not cut it off. A route/credential pair is not dispatched repeatedly, except for one existing retry to adapt an explicit parameter limit. If time runs out before the queue is exhausted, the report shows remaining routes and the stop reason instead of claiming every quota is exhausted. Clients can impose shorter timeouts, and upstream quota is not reserved. `auto` retains its existing bounded failover policy.
+
 ### Fewer password prompts and interrupted tool-turn recovery (1.0.2+)
 
 Normal requests do not initiate system password dialogs. Concurrent reads of one key are coalesced and failures back off. On macOS, newly saved and migrated keys share one application Keychain item. Authorize from the vault screen when convenient. Legacy independent items may still require separate approval during the first migration. Locks, permissions or signing changes may require authorization again; a permanent one-password guarantee is not offered. Keys are not moved into plaintext files.
