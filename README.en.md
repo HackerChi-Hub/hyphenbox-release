@@ -17,11 +17,11 @@ The application is free to download and requires no HyphenBox account. Apply for
 <!-- recent-features:start -->
 ## Recent features and improvements (5 items)
 
-- **1.0.1** · Replaced the retired client integration with native DeepSeek Harness setup; removed legacy configuration, cache-cleanup and execution paths.
-- **1.0.1** · Harness setup uses an undoable managed layer, preserves existing providers and sessions, and passes only the local token; new sessions default to free when eligible candidates exist.
-- **1.0.1** · The bundled sponsorship QR code stays visible on all three platforms without a usage, network or asynchronous detection gate.
-- **1.0.1** · Statistics settings are collapsed under Improve user experience; expand for the real reporting scope and opt-out. Existing preferences are preserved.
-- **1.0.0** · Corrected official free-tier conditions; candidates without a verified request from your own account do not enter the free pool.
+- **1.0.2** · A shared macOS application vault and foreground authorization, coalesced reads and failure backoff reduce repeated password prompts.
+- **1.0.2** · Automatic routing isolates unreadable credentials and tries eligible alternatives without mislabelling local authorization failures as exhausted quotas.
+- **1.0.2** · Structured quota errors wrapped in HTTP 200 are recognized; normal answers and content refusals are not quota errors.
+- **1.0.2** · Complete tool results can form an executed checkpoint for failover continuation without replaying old tool calls.
+- **1.0.2** · Client Setup shows recent routing and tool-checkpoint records with routes, attempt counts and sanitized failure categories.
 <!-- recent-features:end -->
 
 <!-- evergreen:demos:start -->
@@ -36,7 +36,7 @@ The application is free to download and requires no HyphenBox account. Apply for
 These videos show the versions available when recorded. Use the current release information on this page for downloads and capabilities. Narration is in Chinese.
 <!-- evergreen:demos:end -->
 
-**Current stable release: 1.0.1** · [Release notes](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.1)
+**Current stable release: 1.0.2** · [Release notes](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.2)
 
 ## Download and install
 
@@ -44,13 +44,13 @@ The [latest release](https://github.com/HackerChi-Hub/hyphenbox-release/releases
 
 | System | Installer | Requirements |
 |---|---|---|
-| macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.1/HyphenBox_1.0.1_universal.dmg) | macOS 13+, Apple Silicon / Intel |
+| macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_universal.dmg) | macOS 13+, Apple Silicon / Intel |
 
 Harness integration and the updated sponsorship display require **1.0.1**. Check the version offered for your platform. If this version is not yet available for your platform, see the [full release list](https://github.com/HackerChi-Hub/hyphenbox-release/releases) for existing downloads; 1.0.0 does not include these changes.
 
 ![HyphenBox dashboard, Chinese application UI](screenshots/dashboard.png)
 
-Screenshots were captured on 2026-10-24 from the actual macOS 1.0.1 stable release. Provider, model and usage counts describe that captured session, not quantities guaranteed to every user. Resource cards and unverified candidates are not successful local tests. Documentation translations do not imply a translated application UI.
+Screenshots were captured on 2026-10-24 from the actual macOS 1.0.2 stable release. Provider, model and usage counts describe that captured session, not quantities guaranteed to every user. Resource cards and unverified candidates are not successful local tests. Documentation translations do not imply a translated application UI.
 
 <!-- evergreen:capabilities:start -->
 ## What HyphenBox does
@@ -94,6 +94,19 @@ Harness uses its official native OpenAI adapter. HyphenBox appends a managed con
 - An explicit model: select a particular route; upstream context, output and tool limitations still apply.
 
 The router cools down failing routes and tries eligible alternatives. It returns an error if none work. A streaming response that already emitted content is not guaranteed to switch seamlessly to another model, and the software cannot restore an exhausted provider quota.
+### Fewer password prompts and interrupted tool-turn recovery (1.0.2+)
+
+Normal requests do not initiate system password dialogs. Concurrent reads of one key are coalesced and failures back off. On macOS, newly saved and migrated keys share one application Keychain item. Authorize from the vault screen when convenient. Legacy independent items may still require separate approval during the first migration. Locks, permissions or signing changes may require authorization again; a permanent one-password guarantee is not offered. Keys are not moved into plaintext files.
+
+For `free` and `auto`, an unreadable credential is isolated while other eligible routes can be tried. Local authorization failures are not labelled as upstream quota exhaustion. Explicit structured quota errors, including errors wrapped in HTTP 200, participate in cooldown and failover. Normal answers and content refusals are not reclassified merely for mentioning quotas.
+
+If all tool results in the current turn have returned, the router can build an executed-results checkpoint, remove old provider signatures and let an alternative model continue without replaying old tool calls. Missing results, conflicting IDs and streams that already delivered partial output cannot be promised seamless recovery. A different route can mean a different model and behavior. Client Setup shows the latest five routing/checkpoint records; reaching an upstream does not prove completion of the whole task.
+
+![Credential vault: foreground authorization and legacy migration boundaries](screenshots/vault.png)
+
+This record comes from a real local request: the first provider could not fit the request within the account token allowance, and the router selected another eligible free route. This test result is not a guarantee for every account or task.
+
+![Real failover example: account request limit followed by another free route](screenshots/failover.png)
 <!-- evergreen:capabilities:end -->
 
 <!-- evergreen:installation-privacy:start -->
