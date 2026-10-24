@@ -45,8 +45,13 @@ The [latest release](https://github.com/HackerChi-Hub/hyphenbox-release/releases
 | System | Installer | Requirements |
 |---|---|---|
 | macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_universal.dmg) | macOS 13+, Apple Silicon / Intel |
+| Windows | [EXE installer](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_x64-setup.exe) | Windows 10 / 11, x64 |
+| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_x64_en-US.msi) | Windows 10 / 11, x64 |
+| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_amd64.AppImage) | x64 desktop Linux; system keyring / Secret Service required |
+| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_amd64.deb) | x64 desktop Linux; system keyring / Secret Service required |
+| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox-1.0.2-1.x86_64.rpm) | x64 desktop Linux; system keyring / Secret Service required |
 
-Harness integration and the updated sponsorship display require **1.0.1**. Check the version offered for your platform. If this version is not yet available for your platform, see the [full release list](https://github.com/HackerChi-Hub/hyphenbox-release/releases) for existing downloads; 1.0.0 does not include these changes.
+Version **1.0.2** now offers macOS, Windows and Linux installers. Harness integration began in 1.0.1; this release adds credential-read backoff, structured quota-error recognition and conditional tool-checkpoint continuation. The shared application Keychain item is a macOS improvement; Windows and Linux retain their own system secure-storage backends.
 
 ![HyphenBox dashboard, Chinese application UI](screenshots/dashboard.png)
 
