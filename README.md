@@ -18,11 +18,11 @@
 <!-- recent-features:start -->
 ## 近期新增与改进（最近 5 项）
 
+- **1.0.3** · free 取消固定换路与凭据次数上限，在等待预算内尽量遍历本次合格免费候选。
+- **1.0.3** · 接通前总预算 5 分钟、单次尝试最多 60 秒；有效流式输出开始后不受这项预算截断。
+- **1.0.3** · 派发前再次复核本机免费资格，入队后改成自费或不再免费也会跳过，不自动转收费渠道。
+- **1.0.3** · 换路记录展示候选数、耗时和停止原因，区分接通、候选试完与等待预算已到。
 - **1.0.2** · Mac 单一应用保险箱与前台授权入口，合并并发读取、失败退避，减少重复密码弹窗。
-- **1.0.2** · 自动路由隔离不可读密钥，继续尝试其他合格路线，不把本机授权问题冒充额度耗尽。
-- **1.0.2** · 识别 HTTP 200 包装的结构化额度错误；正常回答和内容拒绝不会被当成额度错误。
-- **1.0.2** · 完整工具结果可整理为已执行检查点，支持换路接续，不自动重放旧工具调用。
-- **1.0.2** · 一键连接新增自动换路与工具接续记录，保留近期路线、尝试次数和脱敏失败分类。
 <!-- recent-features:end -->
 
 <!-- evergreen:demos:start -->
@@ -37,11 +37,11 @@
 视频演示的是拍摄时的版本；安装包与当前功能以本页正式发行信息为准。视频为中文讲解。
 <!-- evergreen:demos:end -->
 
-**当前正式版：1.0.2** · [发行说明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.2)
+**当前正式版：1.0.3** · [发行说明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.3)
 
-![黑粉盒子 1.0.2：今日免费池与本地统一接口](screenshots/dashboard.png)
+![黑粉盒子 1.0.3：今日免费池与本地统一接口](screenshots/dashboard.png)
 
-截图拍摄于 2026 年 10 月 24 日，来自 macOS 上实际运行的 1.0.2 正式版。提供商、模型与用量数字是拍摄时这台电脑的状态，不是所有用户默认可用的数量；资料卡与待核验候选也不等于全部实测通过。
+截图拍摄于 2026 年 10 月 24 日，来自 macOS 上实际运行的 1.0.3 正式版。提供商、模型与用量数字是拍摄时这台电脑的状态，不是所有用户默认可用的数量；资料卡与待核验候选也不等于全部实测通过。
 
 <!-- evergreen:capabilities:start -->
 ## 它能做什么
@@ -87,6 +87,12 @@ Harness 使用官方原生 OpenAI 适配。写入只追加黑粉盒子的受管�
 - 手选模型：明确指定某条路线；该模型是否支持工具、上下文长度及输出限制，仍受上游约束。
 
 遇到限流、额度不足或服务错误，路由器会按错误分类冷却并尝试其他合格候选。全部候选不可用时会如实返回错误。已经向客户端输出内容的流式请求不会被承诺无缝换成另一个模型；软件也不能凭空恢复平台额度。
+### 免费候选尽量试完（1.0.3 起）
+
+客户端选择 `free` 后，不再按固定换路次数或四把密钥上限提前停止。它会在本次已添加、已核验、启用且适合请求的免费候选中继续寻找；换路线时优先尚未尝试的平台。冷却、待授权、不支持所需能力或不再免费等候选会按当前状态跳过，派发前再次复核本机免费资格，不自动切入自费凭据或收费模型。
+
+接通前总预算为 5 分钟，单次尝试最多 60 秒；有效流式输出开始后，不受这项换路预算截断。同一路线与凭据组合不重复派发，只保留一次明确参数上限的自愈重试。到时仍有候选未试完，会报告剩余路线和停止原因，不把“还没试完”写成“所有平台没额度”。客户端自己的超时可能更短，平台额度也不会因此被预留；`auto` 暂保留原有有界换路策略。
+
 ### 减少密码弹窗与中断接续（1.0.2 起）
 
 普通调用不主动弹出系统密码框，同一密钥的并发读取合并，失败后退避。Mac 新增和迁移后的密钥保存在一个应用钥匙串条目中；可在「密钥保险箱 → 减少密码弹窗与恢复授权」前台授权。旧版独立条目首次迁移可能仍逐项询问；系统锁定、权限或签名变化仍可能要求再次授权，不能承诺永久只输入一次密码。密钥不改存明文文件。
@@ -104,18 +110,13 @@ Harness 使用官方原生 OpenAI 适配。写入只追加黑粉盒子的受管�
 
 ## 下载安装
 
-[最新版下载入口](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)会随正式发行更新。下面是当前 **1.0.2** 实际已上传的安装件；未列出的平台不代表已有本版安装包：
+[最新版下载入口](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)会随正式发行更新。下面是当前 **1.0.3** 实际已上传的安装件；未列出的平台不代表已有本版安装包：
 
 | 系统 | 安装包 | 要求 |
 |---|---|---|
-| macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_universal.dmg) | macOS 13 及以上，Apple 芯片 / Intel |
-| Windows | [常规安装 EXE](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_x64-setup.exe) | Windows 10 / 11，x64 |
-| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_x64_en-US.msi) | Windows 10 / 11，x64 |
-| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_amd64.AppImage) | x64 桌面发行版，需要系统密钥环 / Secret Service |
-| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox_1.0.2_amd64.deb) | x64 桌面发行版，需要系统密钥环 / Secret Service |
-| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.2/HyphenBox-1.0.2-1.x86_64.rpm) | x64 桌面发行版，需要系统密钥环 / Secret Service |
+| macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_universal.dmg) | macOS 13 及以上，Apple 芯片 / Intel |
 
-本版已补齐 macOS、Windows 和 Linux 的 **1.0.2** 安装包。Harness 接入从 1.0.1 起提供，本版增加密钥读取退避、结构化额度错误识别和有条件的工具检查点接续。Mac 单一钥匙串条目属于 Mac 平台改进；Windows 和 Linux 使用各自的系统安全存储。
+本轮 **1.0.3** 提供 macOS 通用包；Windows 和 Linux 已补齐 **1.0.2** 安装包，可在 [v1.0.2 发行页](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.2)下载。Harness 接入从 1.0.1 起提供，1.0.2 增加密钥读取退避、结构化额度错误识别和有条件的工具检查点接续，但不含本轮免费候选遍历。Mac 单一钥匙串条目属于 Mac 平台改进；Windows 和 Linux 使用各自的系统安全存储。
 
 本次 Windows/Linux 安装包使用内置签名目录，未预置在线目录服务；模型核验、路由和调用仍可使用自己的密钥。目录在线刷新需另行配置受控服务。
 
