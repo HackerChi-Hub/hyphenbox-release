@@ -18,11 +18,11 @@
 <!-- recent-features:start -->
 ## 近期新增与改进（最近 5 项）
 
-- **1.0.3** · free 取消固定换路与凭据次数上限，在等待预算内尽量遍历本次合格免费候选。
-- **1.0.3** · 接通前总预算 5 分钟、单次尝试最多 60 秒；有效流式输出开始后不受这项预算截断。
-- **1.0.3** · 派发前再次复核本机免费资格，入队后改成自费或不再免费也会跳过，不自动转收费渠道。
-- **1.0.3** · 换路记录展示候选数、耗时和停止原因，区分接通、候选试完与等待预算已到。
-- **1.0.2** · Mac 单一应用保险箱与前台授权入口，合并并发读取、失败退避，减少重复密码弹窗。
+- **1.0.4** · 修复负费用统计，上游负价占位与历史无效单价不再参与估值，保留原有用量。
+- **1.0.4** · 按实际凭据当前声明分开统计免费、自费与未声明用量，未知不自动计入免费成果。
+- **1.0.4** · 移除固定实付零元，区分当前标价估值与账单，显示缺价用量、请求记录及平台与模型组合。
+- **1.0.4** · 随包免费资源更新到近期官方复核目录；自动同步增加官方零价交集与证据时效检查。
+- **1.0.4** · 专用安全分类模型不再混入 free／auto 对话候选，已有路由也按用途隔离并保留历史。
 <!-- recent-features:end -->
 
 <!-- evergreen:demos:start -->
@@ -37,11 +37,11 @@
 视频演示的是拍摄时的版本；安装包与当前功能以本页正式发行信息为准。视频为中文讲解。
 <!-- evergreen:demos:end -->
 
-**当前正式版：1.0.3** · [发行说明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.3)
+**当前正式版：1.0.4** · [发行说明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.4)
 
-![黑粉盒子 1.0.3：今日免费池与本地统一接口](screenshots/dashboard.png)
+![黑粉盒子 1.0.4：今日免费池与本地统一接口](screenshots/dashboard-1.0.4.png)
 
-截图拍摄于 2026 年 10 月 24 日，来自 macOS 上实际运行的 1.0.3 正式版。提供商、模型与用量数字是拍摄时这台电脑的状态，不是所有用户默认可用的数量；资料卡与待核验候选也不等于全部实测通过。
+截图拍摄于 2026 年 10 月 29 日，首页与用量截图来自 macOS 上实际运行的 1.0.4 正式版；其余界面截图保留 2026 年 10 月 24 日的 1.0.3 正式版，并未改标为新图。数字只代表拍摄时这台电脑的状态，不是所有用户默认可用的数量；资料卡与候选不等于账户级实测通过。
 
 <!-- evergreen:capabilities:start -->
 ## 它能做什么
@@ -106,22 +106,26 @@ Harness 使用官方原生 OpenAI 适配。写入只追加黑粉盒子的受管�
 下面是本机真实调用的一次换路记录：首家平台的账户令牌额度装不下请求，随后转到另一家免费路线。它是这次测试的结果，不代表所有账户或任务都能成功。
 
 ![真实换路示例：账户请求额度限制后改走另一家免费路线](screenshots/failover.png)
+### 本机用量与当前标价估值
+
+统计按实际使用凭据的当前声明分为免费额度、自费与未声明，未知不会自动计入免费成果。负数价格占位、非数字和无穷值不参与估值；没有有效单价和明确零价分别显示。当前单价估值不是账单，也不是已节省的金额，软件不再固定声称实付零元。
+
+修改单价或计费声明会改变历史汇总；历史请求没有当时的账单快照。次数为请求记录，包含开始后中断的流式请求；模型数为平台与模型组合，不能等同于独立底座模型或完整任务成功数。
+
+![1.0.4 实际用量界面：计费声明、当前单价估值与账单边界](screenshots/usage-1.0.4.png)
+
+专用安全分类模型（如 Qwen3Guard、Llama Guard、GPT OSS Safeguard）按安全分类用途隔离，已有路由也不会再进入 free／auto 通用对话候选；不删除用户历史用量。
 <!-- evergreen:capabilities:end -->
 
 ## 下载安装
 
-[最新版下载入口](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)会随正式发行更新。下面是当前 **1.0.3** 实际已上传的安装件；未列出的平台不代表已有本版安装包：
+[最新版下载入口](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)会随正式发行更新。下面是当前 **1.0.4** 实际已上传的安装件；未列出的平台不代表已有本版安装包：
 
 | 系统 | 安装包 | 要求 |
 |---|---|---|
-| macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_universal.dmg) | macOS 13 及以上，Apple 芯片 / Intel |
-| Windows | [常规安装 EXE](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_x64-setup.exe) | Windows 10 / 11，x64 |
-| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_x64_en-US.msi) | Windows 10 / 11，x64 |
-| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_amd64.AppImage) | x64 桌面发行版，需要系统密钥环 / Secret Service |
-| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_amd64.deb) | x64 桌面发行版，需要系统密钥环 / Secret Service |
-| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox-1.0.3-1.x86_64.rpm) | x64 桌面发行版，需要系统密钥环 / Secret Service |
+| macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_universal.dmg) | macOS 13 及以上，Apple 芯片 / Intel |
 
-本版已补齐 macOS、Windows 和 Linux 的 **1.0.3** 安装包，包含最新免费候选遍历与 1.0.2 的密钥读取、额度识别和工具检查点改进。`free` 在接通前五分钟预算内尽量尝试本次合格免费候选，每次最多等待 60 秒；`auto` 保留有界换路策略。Mac 单一钥匙串条目属于 Mac 平台改进，Windows/Linux 使用各自的系统安全存储。
+本版提供 macOS **1.0.4** 通用安装包，更新统计口径与随包资源。Windows、Linux 的 1.0.4 构建受 GitHub Actions 账户计费限制，尚未产出新版；[1.0.3 三平台下载](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.3)继续保留。下方未列出 Windows/Linux 1.0.4，表示本次尚未提供。
 
 本次 Windows/Linux 安装包使用内置签名目录，未预置在线目录服务；模型核验、路由和调用仍可使用自己的密钥。目录在线刷新需另行配置受控服务。
 
