@@ -17,11 +17,11 @@ The application is free to download and requires no HyphenBox account. Apply for
 <!-- recent-features:start -->
 ## Recent features and improvements (5 items)
 
-- **1.0.3** · free no longer stops at a fixed route-hop or credential count; eligible free candidates are explored within the wait budget.
-- **1.0.3** · Pre-output waits are bounded to five minutes total and 60 seconds per attempt without cutting off valid streams already started.
-- **1.0.3** · Local free eligibility is rechecked before dispatch; credentials or models changed to paid are skipped, not used as automatic fallbacks.
-- **1.0.3** · Routing history shows candidate counts, elapsed time and whether routing connected, exhausted candidates or ran out of wait budget.
-- **1.0.2** · A shared macOS application vault and foreground authorization, coalesced reads and failure backoff reduce repeated password prompts.
+- **1.0.4** · Negative price sentinels and invalid stored prices no longer produce negative cost estimates; usage history is retained.
+- **1.0.4** · Usage is grouped by the actual credential's current free, paid or undeclared classification; unknown usage is excluded from free totals.
+- **1.0.4** · The fixed zero-paid claim is removed; current-price estimates, missing-price usage, request records and provider-model combinations are distinguished from bills.
+- **1.0.4** · The bundled resource catalog includes recent official reviews; automatic synchronization adds official zero-price intersections and evidence-age checks.
+- **1.0.4** · Dedicated safety classifiers are excluded from general free/auto chat, including legacy routes; usage history remains intact.
 <!-- recent-features:end -->
 
 <!-- evergreen:demos:start -->
@@ -36,7 +36,7 @@ The application is free to download and requires no HyphenBox account. Apply for
 These videos show the versions available when recorded. Use the current release information on this page for downloads and capabilities. Narration is in Chinese.
 <!-- evergreen:demos:end -->
 
-**Current stable release: 1.0.3** · [Release notes](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.3)
+**Current stable release: 1.0.4** · [Release notes](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.4)
 
 ## Download and install
 
@@ -44,20 +44,15 @@ The [latest release](https://github.com/HackerChi-Hub/hyphenbox-release/releases
 
 | System | Installer | Requirements |
 |---|---|---|
-| macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_universal.dmg) | macOS 13+, Apple Silicon / Intel |
-| Windows | [EXE installer](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_x64-setup.exe) | Windows 10 / 11, x64 |
-| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_x64_en-US.msi) | Windows 10 / 11, x64 |
-| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_amd64.AppImage) | x64 desktop Linux; system keyring / Secret Service required |
-| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox_1.0.3_amd64.deb) | x64 desktop Linux; system keyring / Secret Service required |
-| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.3/HyphenBox-1.0.3-1.x86_64.rpm) | x64 desktop Linux; system keyring / Secret Service required |
+| macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_universal.dmg) | macOS 13+, Apple Silicon / Intel |
 
-Version **1.0.3** now provides macOS, Windows and Linux installers with expanded free-candidate traversal and the credential, quota and tool-checkpoint improvements from 1.0.2. The `free` route explores eligible candidates within a five-minute pre-connection budget, up to 60 seconds per attempt; `auto` retains its bounded failover behavior. The shared application Keychain item is specific to macOS; Windows/Linux retain their system secure-storage backends.
+Version **1.0.4** provides a universal macOS installer with corrected usage reporting and an updated bundled catalog. Windows/Linux 1.0.4 builds are blocked by GitHub Actions account billing and have not produced installers. Existing [1.0.3 downloads](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.3) remain available; they are not represented as 1.0.4.
 
 These Windows/Linux installers include the signed built-in catalog without a preconfigured online catalog service. Model verification, routing and requests still work with your own keys; online catalog refresh requires a separately configured controlled service.
 
-![HyphenBox dashboard, Chinese application UI](screenshots/dashboard.png)
+![HyphenBox dashboard, Chinese application UI](screenshots/dashboard-1.0.4.png)
 
-Screenshots were captured on 2026-10-24 from the actual macOS 1.0.3 stable release. Provider, model and usage counts describe that captured session, not quantities guaranteed to every user. Resource cards and unverified candidates are not successful local tests. Documentation translations do not imply a translated application UI.
+The dashboard and usage screenshots were captured on 2026-10-29 from the actual macOS 1.0.4 stable release. Other screenshots retain their original 1.0.3 version and 2026-10-24 capture date. Counts describe that captured session, not quantities guaranteed to every user. Resource cards and candidates are not account-level successful tests. Translated documentation does not imply a translated application UI.
 
 <!-- evergreen:capabilities:start -->
 ## What HyphenBox does
@@ -120,6 +115,15 @@ If all tool results in the current turn have returned, the router can build an e
 This record comes from a real local request: the first provider could not fit the request within the account token allowance, and the router selected another eligible free route. This test result is not a guarantee for every account or task.
 
 ![Real failover example: account request limit followed by another free route](screenshots/failover.png)
+### Local usage and current-price estimates
+
+Usage is grouped by the actual credential's current free, paid or undeclared classification. Undeclared usage is excluded from free totals. Negative price sentinels, non-numeric values and infinity are excluded from estimates; missing prices and explicit zero prices are distinguished. Current-price estimates are neither bills nor proven savings, and no fixed zero-paid claim is displayed.
+
+Changing a price or billing declaration changes historical summaries; historical requests do not contain billing snapshots. Request counts can include streams interrupted after starting. Model counts represent provider-model combinations, not independent base models or completed tasks.
+
+![Actual 1.0.4 usage UI: billing classification, current-price estimates and billing limits](screenshots/usage-1.0.4.png)
+
+Dedicated safety classifiers such as Qwen3Guard, Llama Guard and GPT OSS Safeguard are isolated from general free/auto chat, including existing routes, while usage history is preserved.
 <!-- evergreen:capabilities:end -->
 
 <!-- evergreen:installation-privacy:start -->
