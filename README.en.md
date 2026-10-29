@@ -48,7 +48,9 @@ The [latest release](https://github.com/HackerChi-Hub/hyphenbox-release/releases
 
 Version **1.0.4** provides a universal macOS installer with corrected usage reporting and an updated bundled catalog. Windows/Linux 1.0.4 builds are blocked by GitHub Actions account billing and have not produced installers. Existing [1.0.3 downloads](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.3) remain available; they are not represented as 1.0.4.
 
-These Windows/Linux installers include the signed built-in catalog without a preconfigured online catalog service. Model verification, routing and requests still work with your own keys; online catalog refresh requires a separately configured controlled service.
+**Final macOS 1.0.4 validation completed on 2026-10-29:** authenticated chat, a valid 3072-dimensional embedding and an official DeepSeek Harness task with two reads and one write passed. A real upstream token-budget rejection was followed by successful routing to another free channel. A production-router fault fixture bridged to the installed app also covered HTTP 402, credential-read failure and resumption through an eighth candidate after a tool write; each successful case wrote once. [Supplementary validation results](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_macos.validation.json).
+
+The retained Windows/Linux 1.0.3 installers include the signed built-in catalog without a preconfigured online catalog service. Model verification, routing and requests still work with your own keys; online catalog refresh requires a separately configured controlled service.
 
 ![HyphenBox dashboard, Chinese application UI](screenshots/dashboard-1.0.4.png)
 
