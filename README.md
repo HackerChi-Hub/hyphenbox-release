@@ -127,7 +127,9 @@ Harness 使用官方原生 OpenAI 适配。写入只追加黑粉盒子的受管�
 
 本版提供 macOS **1.0.4** 通用安装包，更新统计口径与随包资源。Windows、Linux 的 1.0.4 构建受 GitHub Actions 账户计费限制，尚未产出新版；[1.0.3 三平台下载](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.3)继续保留。下方未列出 Windows/Linux 1.0.4，表示本次尚未提供。
 
-本次 Windows/Linux 安装包使用内置签名目录，未预置在线目录服务；模型核验、路由和调用仍可使用自己的密钥。目录在线刷新需另行配置受控服务。
+**1.0.4 macOS 最终包复验已完成（2026 年 10 月 29 日）**：带密钥对话、3072 维向量请求、官方 DeepSeek Harness 两次读取和一次写入均通过，真实上游请求额度不足后成功改走其他免费路线。另以故障注入层桥接已安装版，验证 402、凭据读取失败和写入后第八家候选接续；成功用例只写入一次。[查看补充验收结果](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_macos.validation.json)。
+
+保留的 1.0.3 Windows/Linux 安装包使用内置签名目录，未预置在线目录服务；模型核验、路由和调用仍可使用自己的密钥。目录在线刷新需另行配置受控服务。
 
 软件免费下载，不需要注册黑粉盒子账号；调用平台 API 通常仍需自行注册平台账户和申请凭据。部分平台需要国际网络，地区、实名、支付与额度条件以平台官方要求为准。
 
