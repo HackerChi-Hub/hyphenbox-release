@@ -124,12 +124,17 @@ Harness 使用官方原生 OpenAI 適配。寫入只追加黑粉盒子的受管�
 | 系統 | 安裝套件 | 要求 |
 |---|---|---|
 | macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_universal.dmg) | macOS 13 及以上，Apple 晶片 / Intel |
+| Windows | [一般安裝 EXE](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_x64-setup.exe) | Windows 10 / 11，x64 |
+| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_x64_en-US.msi) | Windows 10 / 11，x64 |
+| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_amd64.AppImage) | x64 桌面發行版，需要系統金鑰環 / Secret Service |
+| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_amd64.deb) | x64 桌面發行版，需要系統金鑰環 / Secret Service |
+| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox-1.0.4-1.x86_64.rpm) | x64 桌面發行版，需要系統金鑰環 / Secret Service |
 
-本版提供 macOS **1.0.4** 通用安裝套件，更新統計口徑與隨包資源。Windows、Linux 的 1.0.4 建構受 GitHub Actions 帳戶計費限制，尚未產出新版；[1.0.3 三平台下載](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.3)繼續保留。未列出 Windows/Linux 1.0.4，表示本次尚未提供。
+本版三平臺均為 **1.0.4**：macOS 通用套件、Windows x64 EXE/MSI、Linux x64 AppImage/deb/rpm。Windows 使用本機 MSVC 建構，Linux 使用 WSL Ubuntu 22.04 建構；兩端完成核心與桌面模組迴歸，AppImage 通過隔離啟動、目錄驗章與本機介面鑑權檢查。Mac 的真實 Harness 驗收另行記錄，不代表 Windows/Linux 已完成同項真實上游任務。
 
 **1.0.4 macOS 最終套件複驗已完成（2026 年 10 月 29 日）**：帶金鑰對話、3072 維向量請求及官方 DeepSeek Harness 兩次讀取、一次寫入均通過，真實上游請求額度不足後成功改走其他免費路線。另以故障注入層橋接已安裝版，驗證 402、憑證讀取失敗及寫入後第八家候選接續；成功用例僅寫入一次。[檢視補充驗收結果](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_macos.validation.json)。
 
-保留的 1.0.3 Windows/Linux 安裝套件使用內建簽章目錄，未預設線上目錄服務；模型核驗、路由及呼叫仍可使用自己的金鑰。目錄線上更新需另行設定受控服務。
+本次 1.0.4 Windows/Linux 安裝套件使用內建簽章目錄，未預設線上目錄服務；模型核驗、路由及呼叫仍可使用自己的金鑰。目錄線上更新需另行設定受控服務。
 
 軟體免費下載，不需要註冊黑粉盒子賬號；呼叫平臺 API 通常仍需自行註冊平臺賬戶和申請憑據。部分平臺需要國際網路，地區、實名、支付與額度條件以平臺官方要求為準。
 
