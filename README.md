@@ -124,12 +124,17 @@ Harness 使用官方原生 OpenAI 适配。写入只追加黑粉盒子的受管�
 | 系统 | 安装包 | 要求 |
 |---|---|---|
 | macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_universal.dmg) | macOS 13 及以上，Apple 芯片 / Intel |
+| Windows | [常规安装 EXE](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_x64-setup.exe) | Windows 10 / 11，x64 |
+| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_x64_en-US.msi) | Windows 10 / 11，x64 |
+| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_amd64.AppImage) | x64 桌面发行版，需要系统密钥环 / Secret Service |
+| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_amd64.deb) | x64 桌面发行版，需要系统密钥环 / Secret Service |
+| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox-1.0.4-1.x86_64.rpm) | x64 桌面发行版，需要系统密钥环 / Secret Service |
 
-本版提供 macOS **1.0.4** 通用安装包，更新统计口径与随包资源。Windows、Linux 的 1.0.4 构建受 GitHub Actions 账户计费限制，尚未产出新版；[1.0.3 三平台下载](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.3)继续保留。下方未列出 Windows/Linux 1.0.4，表示本次尚未提供。
+本版三平台均为 **1.0.4**：macOS 通用包、Windows x64 EXE/MSI、Linux x64 AppImage/deb/rpm。Windows 使用本机 MSVC 构建，Linux 使用 WSL Ubuntu 22.04 构建；两端完成核心与桌面模块回归，AppImage 通过隔离启动、目录验签和本地接口鉴权检查。Mac 的真实 Harness 验收单独记录，不代表 Windows/Linux 已完成同项真实上游任务。
 
 **1.0.4 macOS 最终包复验已完成（2026 年 10 月 29 日）**：带密钥对话、3072 维向量请求、官方 DeepSeek Harness 两次读取和一次写入均通过，真实上游请求额度不足后成功改走其他免费路线。另以故障注入层桥接已安装版，验证 402、凭据读取失败和写入后第八家候选接续；成功用例只写入一次。[查看补充验收结果](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_macos.validation.json)。
 
-保留的 1.0.3 Windows/Linux 安装包使用内置签名目录，未预置在线目录服务；模型核验、路由和调用仍可使用自己的密钥。目录在线刷新需另行配置受控服务。
+本次 1.0.4 Windows/Linux 安装包使用内置签名目录，未预置在线目录服务；模型核验、路由和调用仍可使用自己的密钥。目录在线刷新需另行配置受控服务。
 
 软件免费下载，不需要注册黑粉盒子账号；调用平台 API 通常仍需自行注册平台账户和申请凭据。部分平台需要国际网络，地区、实名、支付与额度条件以平台官方要求为准。
 
