@@ -5,7 +5,7 @@
 
 **Find suitable AI APIs, test them with your own credentials, and connect them to your coding tools.**
 
-HyphenBox is a desktop API management application by HyphenTech. It combines a resource radar, a local credential vault, model verification and a unified local endpoint. Use it to compare free API conditions, manage providers and connect DeepSeek Harness, Cursor, Cline or compatible clients. Resource cards include official evidence and review dates; availability is determined by real requests from your own account.
+HyphenBox is a desktop API management application by HyphenTech. It combines a resource radar, a local credential vault, model verification and a unified local endpoint. Use it to compare free API conditions, manage providers and connect DeepSeek Harness, OpenCode, Cline or compatible clients. Resource cards include official evidence and review dates; availability is determined by real requests from your own account.
 
 The application is free to download and requires no HyphenBox account. Apply for your own provider accounts and credentials. Some providers require international network access; regional, identity, payment and quota conditions are set by each provider.
 
@@ -17,11 +17,11 @@ The application is free to download and requires no HyphenBox account. Apply for
 <!-- recent-features:start -->
 ## Recent features and improvements (5 items)
 
-- **1.0.4** · Negative price sentinels and invalid stored prices no longer produce negative cost estimates; usage history is retained.
-- **1.0.4** · Usage is grouped by the actual credential's current free, paid or undeclared classification; unknown usage is excluded from free totals.
-- **1.0.4** · The fixed zero-paid claim is removed; current-price estimates, missing-price usage, request records and provider-model combinations are distinguished from bills.
-- **1.0.4** · The bundled resource catalog includes recent official reviews; automatic synchronization adds official zero-price intersections and evidence-age checks.
-- **1.0.4** · Dedicated safety classifiers are excluded from general free/auto chat, including legacy routes; usage history remains intact.
+- **1.0.5** · The fixed bottom bar is removed. Sidebar and key actions retain step numbers; model buttons align and size to their content.
+- **1.0.5** · DeepSeek Harness is the preferred integration, with backup, managed configuration and undo; other Agents expand on selection.
+- **1.0.5** · Official-documentation templates cover OpenCode, Cline, Roo Code, Continue, Codex CLI and generic compatible clients; no new live Agent validation is claimed.
+- **1.0.5** · The overview combines repeated content while retaining free usage, daily metrics and the sponsorship QR; details and diagnostics expand on demand.
+- **1.0.5** · Manual templates default to free; tokens remain masked and are retrieved on copy. The misleading localhost Cursor guide is removed.
 <!-- recent-features:end -->
 
 <!-- evergreen:demos:start -->
@@ -36,7 +36,7 @@ The application is free to download and requires no HyphenBox account. Apply for
 These videos show the versions available when recorded. Use the current release information on this page for downloads and capabilities. Narration is in Chinese.
 <!-- evergreen:demos:end -->
 
-**Current stable release: 1.0.4** · [Release notes](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.4)
+**Current stable release: 1.0.5** · [Release notes](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.5)
 
 ## Download and install
 
@@ -44,22 +44,17 @@ The [latest release](https://github.com/HackerChi-Hub/hyphenbox-release/releases
 
 | System | Installer | Requirements |
 |---|---|---|
-| macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_universal.dmg) | macOS 13+, Apple Silicon / Intel |
-| Windows | [EXE installer](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_x64-setup.exe) | Windows 10 / 11, x64 |
-| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_x64_en-US.msi) | Windows 10 / 11, x64 |
-| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_amd64.AppImage) | x64 desktop Linux; system keyring / Secret Service required |
-| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_amd64.deb) | x64 desktop Linux; system keyring / Secret Service required |
-| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox-1.0.4-1.x86_64.rpm) | x64 desktop Linux; system keyring / Secret Service required |
+| macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_universal.dmg) | macOS 13+, Apple Silicon / Intel |
 
-Version **1.0.4** is available for all three platforms: universal macOS, Windows x64 EXE/MSI and Linux x64 AppImage/deb/rpm. Windows was built locally with MSVC and Linux with WSL Ubuntu 22.04. Both passed core and desktop regression tests; the AppImage passed isolated startup, signed-catalog and local API authentication checks. Real upstream Harness validation applies separately to Mac and is not claimed for Windows/Linux.
+Version **1.0.5 is a universal macOS release** for Apple Silicon and Intel. Windows/Linux have no 1.0.5 installers; their actual [1.0.4 downloads remain available](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.4) and are not relabelled.
 
-**Final macOS 1.0.4 validation completed on 2026-10-29:** authenticated chat, a valid 3072-dimensional embedding and an official DeepSeek Harness task with two reads and one write passed. A real upstream token-budget rejection was followed by successful routing to another free channel. A production-router fault fixture bridged to the installed app also covered HTTP 402, credential-read failure and resumption through an eighth candidate after a tool write; each successful case wrote once. [Supplementary validation results](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_macos.validation.json).
+**This release's validation scope:** builds, offline regressions, configuration syntax, installation and UI checks. No new live model, Agent tool-task or failover result is claimed. [Historical 1.0.4 validation](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_macos.validation.json) retains its original version.
 
 The Windows/Linux 1.0.4 installers include the signed built-in catalog without a preconfigured online catalog service. Model verification, routing and requests still work with your own keys; online catalog refresh requires a separately configured controlled service.
 
-![HyphenBox dashboard, Chinese application UI](screenshots/dashboard-1.0.4.png)
+![HyphenBox dashboard, Chinese application UI](screenshots/dashboard-1.0.5.png)
 
-The dashboard and usage screenshots were captured on 2026-10-29 from the actual macOS 1.0.4 stable release. Other screenshots retain their original 1.0.3 version and 2026-10-24 capture date. Counts describe that captured session, not quantities guaranteed to every user. Resource cards and candidates are not account-level successful tests. Translated documentation does not imply a translated application UI.
+Screenshots were captured on 2026-10-31 from the installed macOS 1.0.5 stable release. Counts describe that device at capture time, not guaranteed availability. Keys, account details and private conversations are not shown. The historical failover image keeps its original version label; translated documentation does not imply a translated application UI.
 
 <!-- evergreen:capabilities:start -->
 ## What HyphenBox does
@@ -71,7 +66,7 @@ The dashboard and usage screenshots were captured on 2026-10-29 from the actual 
 | Model verification | Fetch models with your credentials, select free candidates and send small real requests; verify chat and embedding models with their respective endpoints |
 | Cost and capability labels | Separate fully free, limited free quota, balance deductions, unknown prices and paid usage; unknown prices do not automatically qualify as free |
 | Local routing | Listen only on `127.0.0.1`; provide a compatible endpoint, multiple-key attempts, rate-limit cooldown and failover |
-| Client setup | Back up, write and undo DeepSeek Harness configuration; provide copyable settings and instructions for Cursor, Cline and compatible SDKs |
+| Agent setup | DeepSeek Harness is preferred, with backup, managed configuration and undo; official-documentation templates cover OpenCode, Cline, Roo Code, Continue, Codex CLI and generic compatible clients; no new live validation is claimed |
 | Optional sponsorship | The bundled QR code is directly visible on all three platforms without a usage or network gate; sponsorship does not unlock features |
 | Diagnostics | Inspect local requests, token usage, output budgets and finish reasons to distinguish truncation, rate limits and upstream errors |
 | Independent catalog updates | Verify the controlled catalog's signatures, version and file hashes before applying resource updates without reinstalling the app |
@@ -80,21 +75,27 @@ The dashboard and usage screenshots were captured on 2026-10-29 from the actual 
 
 Free tiers, one-time trials, temporary promotions and self-hosted open-source models have different conditions. Check the official provider page and your own account entitlements. A model appearing on a card does not prove that your key can call it.
 
-![Free API radar: cards, candidates and review dates](screenshots/free-api.png)
+![Free API radar: cards, candidates and review dates](screenshots/free-api-1.0.5.png)
 
 ### Verify models and route by capability
 
 Model lists come from your credentials; local verification determines usable routes. Add free candidates in batches, test them, re-test or disable individual routes. Embeddings use embedding endpoints. Audio, image, video and reranking capabilities are not all automatically verified and are not inserted into the chat model pool.
 
-![Model routes and real-request verification](screenshots/routes.png)
+![Model actions: discover, add free models and verify the routes](screenshots/routes-1.0.5.png)
 
-### Connect a client
+### Connect an Agent
 
 Use `http://127.0.0.1:17688/v1` and HyphenBox's local unified token instead of entering every upstream key in the client. DeepSeek Harness configuration can be written and undone; other clients use the in-app instructions. Agent-facing model lists exclude routes tested as lacking tool calling.
 
 Harness uses its official native OpenAI adapter. HyphenBox appends a managed configuration layer and saves only the loopback token in the Harness-home environment file, not upstream keys. Existing providers and private sessions are preserved. Start a new Harness process and session after the initial connection; existing sessions retain their own model selections. New sessions default to `free` when eligible free candidates exist; `auto` may use paid routes you added. Undo removes only the managed layer and its token.
 
-![Client setup and actual connectivity check](screenshots/connect.png)
+![Preferred Harness setup and on-demand local API parameters](screenshots/connect-1.0.5.png)
+
+Follow the numbered sidebar: **1 Add a key → 2 Verify models → 3 Connect an Agent**, then expand “4 Start using it” on the connection page. The fixed bottom bar is removed; key buttons retain step numbers and size to their content. Harness is selected first; other guides expand on selection. Manual templates default to `free`. Tokens stay masked and are retrieved only on copy. This release checks official documentation and configuration syntax, without new live Agent requests.
+
+![OpenCode official-documentation configuration with a free default](screenshots/opencode-1.0.5.png)
+
+Sources checked on 2026-10-31: [OpenCode](https://opencode.ai/docs/providers/#custom-provider), [Cline](https://docs.cline.bot/provider-config/openai-compatible), [Roo Code](https://docs.roocode.com/providers/openai-compatible), [Continue](https://docs.continue.dev/customize/model-providers/top-level/openai), [Codex CLI](https://developers.openai.com/codex/config-advanced/#custom-model-providers). [Cursor states that requests pass through its servers](https://cursor.com/docs/settings/api-keys), so the old direct-localhost guide has been removed.
 
 ### Choose free or auto
 
@@ -117,9 +118,9 @@ For `free` and `auto`, an unreadable credential is isolated while other eligible
 
 If all tool results in the current turn have returned, the router can build an executed-results checkpoint, remove old provider signatures and let an alternative model continue without replaying old tool calls. Missing results, conflicting IDs and streams that already delivered partial output cannot be promised seamless recovery. A different route can mean a different model and behavior. Client Setup shows the latest five routing/checkpoint records; reaching an upstream does not prove completion of the whole task.
 
-![Credential vault: foreground authorization and legacy migration boundaries](screenshots/vault.png)
+![Add-key form and authorization guide entry, cropped native view excluding the account list](screenshots/vault-1.0.5.png)
 
-This record comes from a real local request: the first provider could not fit the request within the account token allowance, and the router selected another eligible free route. This test result is not a guarantee for every account or task.
+Historical 1.0.3 record (2026-10-24, not a new 1.0.5 test): the first provider could not fit the request within the account token allowance, and the router selected another eligible free route. This test result is not a guarantee for every account or task.
 
 ![Real failover example: account request limit followed by another free route](screenshots/failover.png)
 ### Local usage and current-price estimates
@@ -128,17 +129,18 @@ Usage is grouped by the actual credential's current free, paid or undeclared cla
 
 Changing a price or billing declaration changes historical summaries; historical requests do not contain billing snapshots. Request counts can include streams interrupted after starting. Model counts represent provider-model combinations, not independent base models or completed tasks.
 
-![Actual 1.0.4 usage UI: billing classification, current-price estimates and billing limits](screenshots/usage-1.0.4.png)
+Expand the overview's free-usage details for provider breakdowns and calculation rules; the main screen keeps the totals and daily metrics.
 
 Dedicated safety classifiers such as Qwen3Guard, Llama Guard and GPT OSS Safeguard are isolated from general free/auto chat, including existing routes, while usage history is preserved.
 <!-- evergreen:capabilities:end -->
 
 <!-- evergreen:installation-privacy:start -->
-## Start in three steps
+## Follow the four steps
 
 1. Read the resource conditions, apply at the official provider, and save your own key in the vault.
 2. Fetch models, add candidates and verify them before using them as routes.
-3. Follow client setup and perform an actual connectivity check. Select `free` for the eligible free pool.
+3. Select the preferred Harness integration or another Agent and write or copy its configuration.
+4. Keep HyphenBox running; start a new Agent process and session, choose `free` and run your task.
 
 ## First launch and signatures
 
