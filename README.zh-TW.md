@@ -5,7 +5,7 @@
 
 **找到合適的免費 AI 介面，用自己的金鑰測通，再接入常用 AI 程式設計工具。**
 
-黑粉盒子是黑粉科技開發的桌面 AI API 管理工具，把免費資源發現、本機金鑰保險箱、模型核驗和本地統一路由放在一起。適合尋找免費大模型 API、管理多個提供商，或給 DeepSeek Harness、Cursor、Cline 配置相容介面的使用者。資源條件有官方證據與核對日期；模型是否能用，以你自己的賬戶和真實請求為準。
+黑粉盒子是黑粉科技開發的桌面 AI API 管理工具，把免費資源發現、本機金鑰保險箱、模型核驗和本地統一路由放在一起。適合尋找免費大模型 API、管理多個提供商，或給 DeepSeek Harness、OpenCode、Cline 配置相容介面的使用者。資源條件有官方證據與核對日期；模型是否能用，以你自己的賬戶和真實請求為準。
 
 
 軟體免費下載，不需註冊黑粉盒子賬號。平臺金鑰需自行申請，部分平臺需要國際網路；免費額度、地區和賬戶條件以平臺為準。
@@ -18,11 +18,11 @@
 <!-- recent-features:start -->
 ## 近期新增與改進（最近 5 項）
 
-- **1.0.4** · 修復負費用統計，上游負價佔位與歷史無效單價不再參與估值，保留原有用量。
-- **1.0.4** · 依實際憑證目前聲明分開統計免費、自費與未聲明用量，未知不自動計入免費成果。
-- **1.0.4** · 移除固定實付零元，區分目前標價估值與帳單，顯示缺價用量、請求記錄及平台與模型組合。
-- **1.0.4** · 隨包免費資源更新至近期官方複核目錄；自動同步增加官方零價交集與證據時效檢查。
-- **1.0.4** · 專用安全分類模型不再混入 free／auto 對話候選，已有路由也按用途隔離並保留歷史。
+- **1.0.5** · 移除底部固定欄，步驟編號保留在左側與關鍵按鈕，模型操作按鈕對齊並依內容寬度顯示。
+- **1.0.5** · DeepSeek Harness 作為首選，保留備份後寫入與撤銷，其他 Agent 依選擇展開。
+- **1.0.5** · 依官方文件提供 OpenCode、Cline、Roo Code、Continue、Codex CLI 與通用相容用戶端設定；本輪未做真實呼叫實測。
+- **1.0.5** · 首頁合併重複內容，保留免費成果、今日概況與贊助碼，明細和診斷按需展開。
+- **1.0.5** · 手動設定預設 free，畫面令牌保持遮罩，複製時才讀取；移除無法直連本機的 Cursor 舊指引。
 <!-- recent-features:end -->
 
 <!-- evergreen:demos:start -->
@@ -37,11 +37,11 @@
 影片示範的是拍攝時的版本；安裝套件與目前功能以本頁正式發行資訊為準。影片以中文講解。
 <!-- evergreen:demos:end -->
 
-**當前正式版：1.0.4** · [發行說明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.4)
+**當前正式版：1.0.5** · [發行說明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.5)
 
-![黑粉盒子 1.0.4：今日免費池與本地統一介面](screenshots/dashboard-1.0.4.png)
+![黑粉盒子 1.0.5：免費成果、今日概況與左側步驟導覽](screenshots/dashboard-1.0.5.png)
 
-截圖拍攝於 2026 年 10 月 29 日，首頁與用量截圖來自 macOS 上實際執行的 1.0.4 正式版；其餘介面截圖保留 2026 年 10 月 24 日的 1.0.3 正式版，並未改標為新圖。數字僅代表拍攝時這臺電腦的狀態；資料卡與候選不等於帳戶級實測通過。
+截圖拍攝於 2026 年 10 月 31 日，來自安裝後的 macOS 1.0.5 正式版。數字代表拍攝設備當時的狀態，不代表所有使用者都能呼叫相同數量的模型；不展示金鑰、帳戶資訊或私人對話。歷史換路圖另外標註版本。
 
 <!-- evergreen:capabilities:start -->
 ## 它能做什麼
@@ -55,7 +55,7 @@
 | 模型發現與核驗 | 用自己的金鑰拉取模型列表，篩選免費模型、批次加入併傳送最小真實請求；對話和向量模型按用途驗證，不把向量模型拿去做聊天測試 |
 | 費用與能力標識 | 區分完全免費、免費額度、扣餘額、價格未知和自費；展示核驗狀態、工具呼叫能力等資訊，未知價格不會自動算免費 |
 | 本地統一路由 | 只監聽 `127.0.0.1`，提供相容介面、多金鑰嘗試、限流冷卻和故障切換；免費路線與一般自動路線分開 |
-| 客戶端接入 | DeepSeek Harness 配置可備份後寫入、可撤銷；Cursor、Cline 和相容 SDK 提供可複製引數及接入指引 |
+| Agent 接入 | 首選 DeepSeek Harness，可備份後寫入及撤銷；OpenCode、Cline、Roo Code、Continue、Codex CLI 與通用相容用戶端提供官方文件設定，未宣稱本輪實測通過 |
 | 自願贊助 | 三平臺首頁直接顯示隨包贊助碼，不依賴用量或網路；贊助不解鎖功能，也不影響免費使用 |
 | 呼叫診斷與統計 | 檢視本機請求與詞元用量；最近呼叫診斷顯示輸出預算、結束原因等資訊，幫助區分輸出長度限制、限流和上游錯誤 |
 | 獨立目錄更新 | 軟體定期讀取受控的簽名目錄，驗證簽名、版本和檔案雜湊；更新資源資訊不必重新下載安裝包 |
@@ -64,21 +64,27 @@
 
 免費檔、一次性試用、限時活動與開源自託管不是同一回事。先看免費型別、申請條件和核對日期，再回到平臺官方頁面確認自己賬戶的權益。資料卡里的模型清單也不能代替本機真實呼叫。
 
-![免費 API 雷達：資料卡、候選、條件與核對日期](screenshots/free-api.png)
+![免費 API 雷達：資料卡、候選、條件與核對日期](screenshots/free-api-1.0.5.png)
 
 ### 模型與路由
 
 模型列表來自你自己的憑據，路由資格來自本機核驗結果。可以批次加入免費模型、核驗待驗證路線，也可以重新核驗、停用或刪除單條路線。向量模型走向量介面；語音、影象、影片與重排序等用途目前不能全部自動核驗，也不會混入聊天介面。
 
-![模型與路由：免費模型加入、真實請求核驗與能力標識](screenshots/routes.png)
+![模型操作：拉取、新增免費模型與批次核驗](screenshots/routes-1.0.5.png)
 
-### 一鍵連線
+### 接入 Agent
 
 統一地址是 `http://127.0.0.1:17688/v1`，客戶端使用黑粉盒子的本地統一令牌，不需要逐個平臺填寫上游金鑰。DeepSeek Harness 可以直接寫入配置並撤銷；其他客戶端按應用內指引手動填寫。面向智慧體客戶端的模型列表會篩掉已實測不支援工具呼叫的路線。
 
 Harness 使用官方原生 OpenAI 適配。寫入只追加黑粉盒子的受管設定層，並在使用者環境檔中儲存本機令牌，不複製上游金鑰；原有提供商與私人會話保留。首次連接後請新啟 Harness 程序、建立新會話；既有會話的模型選擇不變。有免費候選時預設選擇 `free`，`auto` 可能使用已加入的付費路線。撤銷只移除這層設定及其令牌，不刪除其他設定或會話。
 
-![一鍵連線：迴環地址、預設遮罩令牌與真實連通性自檢](screenshots/connect.png)
+![首選 Harness：受管接入與按需展開的介面參數](screenshots/connect-1.0.5.png)
+
+按左側編號依次完成 **1 新增金鑰 → 2 核驗模型 → 3 接入 Agent**，隨後在接入頁展開「4 開始使用」。底部不再放固定欄，關鍵按鈕保留步驟號並依內容寬度排列。Harness 預設排在第一位，其他 Agent 依選擇展開。手動範本預設 `free`，令牌在畫面遮罩，主動複製時才填入；本輪僅核對官方文件與設定格式，未進行新的真實呼叫。
+
+![OpenCode：官方文件設定與免費預設路線](screenshots/opencode-1.0.5.png)
+
+官方依據：[OpenCode](https://opencode.ai/docs/providers/#custom-provider)、[Cline](https://docs.cline.bot/provider-config/openai-compatible)、[Roo Code](https://docs.roocode.com/providers/openai-compatible)、[Continue](https://docs.continue.dev/customize/model-providers/top-level/openai)、[Codex CLI](https://developers.openai.com/codex/config-advanced/#custom-model-providers)，核對於 2026-10-31。[Cursor 官方說明](https://cursor.com/docs/settings/api-keys)請求經過其伺服器，不能直接使用本機迴環地址，舊指引已移除。
 
 ## free 與 auto 怎麼選
 
@@ -101,9 +107,9 @@ Harness 使用官方原生 OpenAI 適配。寫入只追加黑粉盒子的受管�
 
 目前工具輪已交回全部工具結果時，可整理為已執行檢查點，移除舊提供商簽名後交給替代模型接續，不會自動重放舊工具呼叫。缺結果、編號衝突或已輸出一半的串流回答仍不能保證無縫恢復，換路也不保證模型能力和風格不變。最近五筆可在一鍵連接的自動換路與工具接續記錄查看；接通上游不代表整個任務完成。
 
-![金鑰保險箱：前台授權與舊項目遷移邊界](screenshots/vault.png)
+![新增金鑰表單與授權說明入口（原生介面局部，裁去帳戶清單）](screenshots/vault-1.0.5.png)
 
-以下是本機真實呼叫的換路記錄：首家平臺的賬戶令牌額度容納不下請求，隨後改走另一家免費路線。這是本次測試結果，不代表所有賬戶或任務都能成功。
+以下是 1.0.3 的歷史真實換路記錄（2026-10-24，未改標為本版新圖）：首家平臺的賬戶令牌額度容納不下請求，隨後改走另一家免費路線。這是當時的測試結果，不代表所有賬戶或任務都能成功。
 
 ![真實換路示例：賬戶請求額度限制後改走另一家免費路線](screenshots/failover.png)
 ### 本機用量與目前標價估值
@@ -112,38 +118,34 @@ Harness 使用官方原生 OpenAI 適配。寫入只追加黑粉盒子的受管�
 
 修改單價或計費聲明會影響歷史彙總；歷史請求沒有當時的帳單快照。次數為請求記錄，包含開始後中斷的串流；模型數為平台與模型組合，不等於獨立底層模型或完整任務成功數。
 
-![1.0.4 實際用量介面：計費聲明、目前單價估值與帳單邊界](screenshots/usage-1.0.4.png)
+用量明細與統計口徑在首頁「免費成果」按需展開；首頁僅保留累計成果與總體概況。
 
 專用安全分類模型（如 Qwen3Guard、Llama Guard、GPT OSS Safeguard）依安全分類用途隔離，已有路由也不再進入 free／auto 通用對話候選；不刪除歷史用量。
 <!-- evergreen:capabilities:end -->
 
 ## 下載安裝
 
-[最新版下載入口](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)會隨正式發行更新。下面是當前 **1.0.4** 實際已上傳的安裝件；未列出的平臺不代表已有本版安裝包：
+[最新版下載入口](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)會隨正式發行更新。下面是當前 **1.0.5** 實際已上傳的安裝件；未列出的平臺不代表已有本版安裝包：
 
 | 系統 | 安裝套件 | 要求 |
 |---|---|---|
-| macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_universal.dmg) | macOS 13 及以上，Apple 晶片 / Intel |
-| Windows | [一般安裝 EXE](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_x64-setup.exe) | Windows 10 / 11，x64 |
-| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_x64_en-US.msi) | Windows 10 / 11，x64 |
-| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_amd64.AppImage) | x64 桌面發行版，需要系統金鑰環 / Secret Service |
-| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_amd64.deb) | x64 桌面發行版，需要系統金鑰環 / Secret Service |
-| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox-1.0.4-1.x86_64.rpm) | x64 桌面發行版，需要系統金鑰環 / Secret Service |
+| macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_universal.dmg) | macOS 13 及以上，Apple 晶片 / Intel |
 
-本版三平臺均為 **1.0.4**：macOS 通用套件、Windows x64 EXE/MSI、Linux x64 AppImage/deb/rpm。Windows 使用本機 MSVC 建構，Linux 使用 WSL Ubuntu 22.04 建構；兩端完成核心與桌面模組迴歸，AppImage 通過隔離啟動、目錄驗章與本機介面鑑權檢查。Mac 的真實 Harness 驗收另行記錄，不代表 Windows/Linux 已完成同項真實上游任務。
+本次 **1.0.5 提供 macOS 通用包**，支援 Apple 晶片與 Intel。Windows/Linux 尚無 1.0.5，保留 [1.0.4 平臺安裝包](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.4)，不把舊版標成新版。
 
-**1.0.4 macOS 最終套件複驗已完成（2026 年 10 月 29 日）**：帶金鑰對話、3072 維向量請求及官方 DeepSeek Harness 兩次讀取、一次寫入均通過，真實上游請求額度不足後成功改走其他免費路線。另以故障注入層橋接已安裝版，驗證 402、憑證讀取失敗及寫入後第八家候選接續；成功用例僅寫入一次。[檢視補充驗收結果](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_macos.validation.json)。
+**本輪驗證範圍**：構建、離線回歸、設定格式、實際安裝與介面檢查；未新增上游模型、Agent 工具任務或自動換路真實呼叫結論。[1.0.4 歷史驗收](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_macos.validation.json)保留原版本標記。
 
 本次 1.0.4 Windows/Linux 安裝套件使用內建簽章目錄，未預設線上目錄服務；模型核驗、路由及呼叫仍可使用自己的金鑰。目錄線上更新需另行設定受控服務。
 
 軟體免費下載，不需要註冊黑粉盒子賬號；呼叫平臺 API 通常仍需自行註冊平臺賬戶和申請憑據。部分平臺需要國際網路，地區、實名、支付與額度條件以平臺官方要求為準。
 
 <!-- evergreen:installation-privacy:start -->
-### 三步開始使用
+### 按步驟開始使用
 
-1. 在「免費 API」檢視資源條件，到平臺官方入口申請自己的金鑰，再存入「金鑰保險箱」。
-2. 在「模型與路由」拉取模型列表、加入候選並核驗；透過後才能作為可用路線使用。
-3. 在「一鍵連線」按指引接入客戶端，先做真實連通性自檢；僅使用免費範圍時選擇 `free`。
+1. 在「免費資源」檢視資源條件，到平臺官方入口申請自己的金鑰，再存入「新增金鑰」。
+2. 在「核驗模型」拉取模型列表、加入候選並核驗；透過後才能作為可用路線使用。
+3. 在「接入 Agent」選擇首選 Harness 或其他 Agent，寫入設定或複製參數。
+4. 保持黑粉盒子執行，新啟 Agent、新建會話，模型選 `free`，再執行自己的任務。
 
 ### 首次開啟與簽名
 
@@ -155,7 +157,7 @@ Harness 使用官方原生 OpenAI 適配。寫入只追加黑粉盒子的受管�
 
 提供 `/v1/models`、`/v1/chat/completions`（含流式）、`/v1/embeddings`，以及舊版 `/v1/completions` 和 `/v1/responses` 的相容轉換。請求需要本地統一令牌，模型能力與可用範圍取決於實際路線。
 
-相容介面不代表每家提供商都支援全部功能。工具呼叫、思考簽名、多模態、輸出上限等仍有模型和協議差異；圖片、影片、音訊及重排序生成不能一概當成已由本地聊天介面支援。長回答截斷時，可先在「一鍵連線 → 最近呼叫與結束原因」檢視輸出預算及結束原因，再核對客戶端引數和平臺限制。
+相容介面不代表每家提供商都支援全部功能。工具呼叫、思考簽名、多模態、輸出上限等仍有模型和協議差異；圖片、影片、音訊及重排序生成不能一概當成已由本地聊天介面支援。長回答截斷時，可先在「接入 Agent → 最近呼叫與結束原因」檢視輸出預算及結束原因，再核對客戶端引數和平臺限制。
 
 ## 軟體更新與資源更新
 
