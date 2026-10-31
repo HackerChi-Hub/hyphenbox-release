@@ -5,7 +5,7 @@
 
 **找到合适的免费 AI 接口，用自己的密钥测通，再接入常用 AI 编程工具。**
 
-黑粉盒子是黑粉科技开发的桌面 AI API 管理工具，把免费资源发现、本机密钥保险箱、模型核验和本地统一路由放在一起。适合寻找免费大模型 API、管理多个提供商，或给 DeepSeek Harness、Cursor、Cline 配置兼容接口的用户。资源条件有官方证据与核对日期；模型是否能用，以你自己的账户和真实请求为准。
+黑粉盒子是黑粉科技开发的桌面 AI API 管理工具，把免费资源发现、本机密钥保险箱、模型核验和本地统一路由放在一起。适合寻找免费大模型 API、管理多个提供商，或给 DeepSeek Harness、OpenCode、Cline 配置兼容接口的用户。资源条件有官方证据与核对日期；模型是否能用，以你自己的账户和真实请求为准。
 
 
 软件免费下载，不需注册黑粉盒子账号。平台密钥需自行申请，部分平台需要国际网络；免费额度、地区和账户条件以平台为准。
@@ -18,11 +18,11 @@
 <!-- recent-features:start -->
 ## 近期新增与改进（最近 5 项）
 
-- **1.0.4** · 修复负费用统计，上游负价占位与历史无效单价不再参与估值，保留原有用量。
-- **1.0.4** · 按实际凭据当前声明分开统计免费、自费与未声明用量，未知不自动计入免费成果。
-- **1.0.4** · 移除固定实付零元，区分当前标价估值与账单，显示缺价用量、请求记录及平台与模型组合。
-- **1.0.4** · 随包免费资源更新到近期官方复核目录；自动同步增加官方零价交集与证据时效检查。
-- **1.0.4** · 专用安全分类模型不再混入 free／auto 对话候选，已有路由也按用途隔离并保留历史。
+- **1.0.5** · 移除底部固定栏，步骤编号保留在左侧与关键按钮，模型操作按钮排齐并按内容宽度显示。
+- **1.0.5** · DeepSeek Harness 作为首选，保留备份后写入与撤销，其他 Agent 按选择展开。
+- **1.0.5** · 按官方文档提供 OpenCode、Cline、Roo Code、Continue、Codex CLI 和通用兼容客户端配置；本轮未做真实调用实测。
+- **1.0.5** · 首页合并重复内容，保留白嫖成果、今日概况与赞助码，明细和诊断按需展开。
+- **1.0.5** · 手动配置默认 free，界面令牌保持遮罩，复制时才读取；移除不能直连本机的 Cursor 旧指引。
 <!-- recent-features:end -->
 
 <!-- evergreen:demos:start -->
@@ -37,11 +37,11 @@
 视频演示的是拍摄时的版本；安装包与当前功能以本页正式发行信息为准。视频为中文讲解。
 <!-- evergreen:demos:end -->
 
-**当前正式版：1.0.4** · [发行说明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.4)
+**当前正式版：1.0.5** · [发行说明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.5)
 
-![黑粉盒子 1.0.4：今日免费池与本地统一接口](screenshots/dashboard-1.0.4.png)
+![黑粉盒子 1.0.5：白嫖成果、今日概况与左侧步骤导航](screenshots/dashboard-1.0.5.png)
 
-截图拍摄于 2026 年 10 月 29 日，首页与用量截图来自 macOS 上实际运行的 1.0.4 正式版；其余界面截图保留 2026 年 10 月 24 日的 1.0.3 正式版，并未改标为新图。数字只代表拍摄时这台电脑的状态，不是所有用户默认可用的数量；资料卡与候选不等于账户级实测通过。
+截图拍摄于 2026 年 10 月 31 日，来自安装后的 macOS 1.0.5 正式版。显示的是拍摄设备当时的状态，不代表所有用户都能调用相同数量的模型；未展示密钥、账户信息或私人对话。历史换路图另行标注版本。
 
 <!-- evergreen:capabilities:start -->
 ## 它能做什么
@@ -55,7 +55,7 @@
 | 模型发现与核验 | 用自己的密钥拉取模型列表，筛选免费模型、批量加入并发送最小真实请求；对话和向量模型按用途验证，不把向量模型拿去做聊天测试 |
 | 费用与能力标识 | 区分完全免费、免费额度、扣余额、价格未知和自费；展示核验状态、工具调用能力等信息，未知价格不会自动算免费 |
 | 本地统一路由 | 只监听 `127.0.0.1`，提供兼容接口、多密钥尝试、限流冷却和故障切换；免费路线与一般自动路线分开 |
-| 客户端接入 | DeepSeek Harness 配置可备份后写入、可撤销；Cursor、Cline 和兼容 SDK 提供可复制参数及接入指引 |
+| Agent 接入 | 首选 DeepSeek Harness，可备份后写入和撤销；OpenCode、Cline、Roo Code、Continue、Codex CLI 与通用兼容客户端提供官方文档配置，未宣称本轮实测通过 |
 | 自愿赞助 | 三平台首页直接显示随包赞助码，不依赖用量或网络；赞助不解锁功能，也不影响免费使用 |
 | 调用诊断与统计 | 查看本机请求与词元用量；最近调用诊断显示输出预算、结束原因等信息，帮助区分输出长度限制、限流和上游错误 |
 | 独立目录更新 | 软件定期读取受控的签名目录，验证签名、版本和文件哈希；更新资源信息不必重新下载安装包 |
@@ -64,21 +64,27 @@
 
 免费档、一次性试用、限时活动与开源自托管不是同一回事。先看免费类型、申请条件和核对日期，再回到平台官方页面确认自己账户的权益。资料卡里的模型清单也不能代替本机真实调用。
 
-![免费 API 雷达：资料卡、候选、条件与核对日期](screenshots/free-api.png)
+![免费 API 雷达：资料卡、候选、条件与核对日期](screenshots/free-api-1.0.5.png)
 
 ### 模型与路由
 
 模型列表来自你自己的凭据，路由资格来自本机核验结果。可以批量加入免费模型、核验待验证路线，也可以重新核验、停用或删除单条路线。向量模型走向量接口；语音、图像、视频与重排序等用途目前不能全部自动核验，也不会混入聊天接口。
 
-![模型与路由：免费模型加入、真实请求核验与能力标识](screenshots/routes.png)
+![模型操作：拉取、加入免费模型与批量核验](screenshots/routes-1.0.5.png)
 
-### 一键连接
+### 接入 Agent
 
 统一地址是 `http://127.0.0.1:17688/v1`，客户端使用黑粉盒子的本地统一令牌，不需要逐个平台填写上游密钥。DeepSeek Harness 可以直接写入配置并撤销；其他客户端按应用内指引手动填写。面向智能体客户端的模型列表会筛掉已实测不支持工具调用的路线。
 
 Harness 使用官方原生 OpenAI 适配。写入只追加黑粉盒子的受管配置层，并在用户环境文件中保存本机令牌，不复制上游密钥；原有提供商与私人会话保留。首次连接后请新启 Harness 进程、建立新会话；已有会话的模型选择不变。存在免费候选时默认选择 `free`，`auto` 可能使用已添加的付费路线。撤销会移除这层配置及其令牌，不删除其他配置或会话。
 
-![一键连接：回环地址、默认遮罩令牌与真实连通性自检](screenshots/connect.png)
+![首选 Harness：受管接入与按需展开的接口参数](screenshots/connect-1.0.5.png)
+
+按左侧编号依次完成 **1 添加密钥 → 2 核验模型 → 3 接入 Agent**，随后在接入页展开“4 开始使用”。底部不再放固定栏，关键操作按钮保留步骤号、按内容宽度排列。Harness 默认排在第一位；选择其他 Agent 后才展开对应参数。手动模板默认 `free`，令牌在界面遮罩、主动复制时填入；本轮只核对官方文档与配置格式，没有进行新的 Agent 真实调用。
+
+![OpenCode：按官方文档生成配置，默认免费路线](screenshots/opencode-1.0.5.png)
+
+[OpenCode](https://opencode.ai/docs/providers/#custom-provider)、[Cline](https://docs.cline.bot/provider-config/openai-compatible)、[Roo Code](https://docs.roocode.com/providers/openai-compatible)、[Continue](https://docs.continue.dev/customize/model-providers/top-level/openai) 和 [Codex CLI](https://developers.openai.com/codex/config-advanced/#custom-model-providers) 的指引核对于 2026-10-31。[Cursor 官方说明](https://cursor.com/docs/settings/api-keys)请求经过其服务器，不能将本机回环地址当成直接接入方案，旧指引已移除。
 
 ## free 与 auto 怎么选
 
@@ -99,11 +105,11 @@ Harness 使用官方原生 OpenAI 适配。写入只追加黑粉盒子的受管�
 
 某把密钥暂不可读时，`free`／`auto` 会隔离该凭据并尝试其他合格路线，不把本机授权失败说成上游额度用完。明确的结构化额度错误（包括 HTTP 200 包装的错误）会参与冷却与换路；正常回答或内容拒绝不会因提到额度而被判成额度错误。
 
-当前工具轮已经交回全部工具结果时，可整理成已执行检查点，移除旧提供商签名后交给替代模型继续；不会自动重放旧工具调用。缺结果、编号冲突或已输出一半的流式回答仍不能保证无缝恢复。换路不保证模型能力或回答风格不变。最近五条记录可在「一键连接 → 自动换路与工具接续记录」查看；接通上游不代表整个任务完成。
+当前工具轮已经交回全部工具结果时，可整理成已执行检查点，移除旧提供商签名后交给替代模型继续；不会自动重放旧工具调用。缺结果、编号冲突或已输出一半的流式回答仍不能保证无缝恢复。换路不保证模型能力或回答风格不变。最近五条记录可在「接入 Agent → 自动换路与工具接续记录」查看；接通上游不代表整个任务完成。
 
-![密钥保险箱：前台授权与旧条目迁移边界](screenshots/vault.png)
+![添加密钥表单与授权说明入口（原生界面局部，裁去账户列表）](screenshots/vault-1.0.5.png)
 
-下面是本机真实调用的一次换路记录：首家平台的账户令牌额度装不下请求，随后转到另一家免费路线。它是这次测试的结果，不代表所有账户或任务都能成功。
+下面是 1.0.3 的历史真实换路记录（2026-10-24，未改标为本版新图）：首家平台的账户令牌额度装不下请求，随后转到另一家免费路线。它是这次测试的结果，不代表所有账户或任务都能成功。
 
 ![真实换路示例：账户请求额度限制后改走另一家免费路线](screenshots/failover.png)
 ### 本机用量与当前标价估值
@@ -112,38 +118,34 @@ Harness 使用官方原生 OpenAI 适配。写入只追加黑粉盒子的受管�
 
 修改单价或计费声明会改变历史汇总；历史请求没有当时的账单快照。次数为请求记录，包含开始后中断的流式请求；模型数为平台与模型组合，不能等同于独立底座模型或完整任务成功数。
 
-![1.0.4 实际用量界面：计费声明、当前单价估值与账单边界](screenshots/usage-1.0.4.png)
+用量明细与统计口径可在首页“白嫖成果”展开查看；首页只保留累计成果和总体概况。
 
 专用安全分类模型（如 Qwen3Guard、Llama Guard、GPT OSS Safeguard）按安全分类用途隔离，已有路由也不会再进入 free／auto 通用对话候选；不删除用户历史用量。
 <!-- evergreen:capabilities:end -->
 
 ## 下载安装
 
-[最新版下载入口](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)会随正式发行更新。下面是当前 **1.0.4** 实际已上传的安装件；未列出的平台不代表已有本版安装包：
+[最新版下载入口](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)会随正式发行更新。下面是当前 **1.0.5** 实际已上传的安装件；未列出的平台不代表已有本版安装包：
 
 | 系统 | 安装包 | 要求 |
 |---|---|---|
-| macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_universal.dmg) | macOS 13 及以上，Apple 芯片 / Intel |
-| Windows | [常规安装 EXE](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_x64-setup.exe) | Windows 10 / 11，x64 |
-| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_x64_en-US.msi) | Windows 10 / 11，x64 |
-| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_amd64.AppImage) | x64 桌面发行版，需要系统密钥环 / Secret Service |
-| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_amd64.deb) | x64 桌面发行版，需要系统密钥环 / Secret Service |
-| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox-1.0.4-1.x86_64.rpm) | x64 桌面发行版，需要系统密钥环 / Secret Service |
+| macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_universal.dmg) | macOS 13 及以上，Apple 芯片 / Intel |
 
-本版三平台均为 **1.0.4**：macOS 通用包、Windows x64 EXE/MSI、Linux x64 AppImage/deb/rpm。Windows 使用本机 MSVC 构建，Linux 使用 WSL Ubuntu 22.04 构建；两端完成核心与桌面模块回归，AppImage 通过隔离启动、目录验签和本地接口鉴权检查。Mac 的真实 Harness 验收单独记录，不代表 Windows/Linux 已完成同项真实上游任务。
+本次 **1.0.5 提供 macOS 通用包**，同时支持 Apple 芯片和 Intel。Windows/Linux 尚无 1.0.5，保留 [1.0.4 平台安装包](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.4)，不会把旧包标成新版。
 
-**1.0.4 macOS 最终包复验已完成（2026 年 10 月 29 日）**：带密钥对话、3072 维向量请求、官方 DeepSeek Harness 两次读取和一次写入均通过，真实上游请求额度不足后成功改走其他免费路线。另以故障注入层桥接已安装版，验证 402、凭据读取失败和写入后第八家候选接续；成功用例只写入一次。[查看补充验收结果](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_macos.validation.json)。
+**本轮验证范围**：1.0.5 执行构建、离线回归、配置格式、实际安装和界面检查；没有新增上游模型、Agent 工具任务或自动换路的真实调用结论。[1.0.4 的历史验收](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_macos.validation.json)保持原版本标记。
 
 本次 1.0.4 Windows/Linux 安装包使用内置签名目录，未预置在线目录服务；模型核验、路由和调用仍可使用自己的密钥。目录在线刷新需另行配置受控服务。
 
 软件免费下载，不需要注册黑粉盒子账号；调用平台 API 通常仍需自行注册平台账户和申请凭据。部分平台需要国际网络，地区、实名、支付与额度条件以平台官方要求为准。
 
 <!-- evergreen:installation-privacy:start -->
-### 三步开始使用
+### 按步骤开始使用
 
-1. 在「免费 API」查看资源条件，到平台官方入口申请自己的密钥，再存入「密钥保险箱」。
-2. 在「模型与路由」拉取模型列表、加入候选并核验；通过后才能作为可用路线使用。
-3. 在「一键连接」按指引接入客户端，先做真实连通性自检；仅使用免费范围时选择 `free`。
+1. 在「免费资源」查看资源条件，到平台官方入口申请自己的密钥，再存入「添加密钥」。
+2. 在「核验模型」拉取模型列表、加入候选并核验；通过后才能作为可用路线使用。
+3. 在「接入 Agent」选择首选 Harness 或其他 Agent，写入配置或复制参数。
+4. 保持黑粉盒子运行，新启 Agent、新建会话，模型选 `free`，再执行自己的任务。
 
 ### 首次打开与签名
 
@@ -155,7 +157,7 @@ Harness 使用官方原生 OpenAI 适配。写入只追加黑粉盒子的受管�
 
 提供 `/v1/models`、`/v1/chat/completions`（含流式）、`/v1/embeddings`，以及旧版 `/v1/completions` 和 `/v1/responses` 的兼容转换。请求需要本地统一令牌，模型能力与可用范围取决于实际路线。
 
-兼容接口不代表每家提供商都支持全部功能。工具调用、思考签名、多模态、输出上限等仍有模型和协议差异；图片、视频、音频及重排序生成不能一概当成已由本地聊天接口支持。长回答截断时，可先在「一键连接 → 最近调用与结束原因」查看输出预算及结束原因，再核对客户端参数和平台限制。
+兼容接口不代表每家提供商都支持全部功能。工具调用、思考签名、多模态、输出上限等仍有模型和协议差异；图片、视频、音频及重排序生成不能一概当成已由本地聊天接口支持。长回答截断时，可先在「接入 Agent → 最近调用与结束原因」查看输出预算及结束原因，再核对客户端参数和平台限制。
 
 ## 软件更新与资源更新
 
@@ -168,7 +170,7 @@ Harness 使用官方原生 OpenAI 适配。写入只追加黑粉盒子的受管�
 - 平台密钥保存在本机系统凭据存储中。本地统一令牌保存在应用数据目录，用于本机回环接口鉴权。
 - 模型调用从本机发往所选提供商，必要的认证信息、提示词与回答**不经过黑粉盒子的目录或统计服务器**。提供商仍会收到调用数据，请阅读其隐私政策。
 - 匿名版本统计默认开启，可在应用内关闭；每个 UTC 日最多上报一次，字段包含匿名设备哈希、软件版本、系统、架构与日期，不包含密钥、对话、用量或所用提供商和模型。
-- 开关位于「一键连接 → 提升使用体验」，默认折叠；展开可查看统计范围、状态并关闭，不改变你已有的选择。
+- 开关位于「接入 Agent → 提升使用体验」，默认折叠；展开可查看统计范围、状态并关闭，不改变你已有的选择。
 - 本仓库只公开下载、说明、截图与更新元数据。**源码、免费资源目录、原始采集与核验资料、私有服务配置、签名私钥均不在此公开。**
 - 不采集或分享泄露密钥，不提供共享账户或绕过额度限制的密钥池。“免费 API”指平台允许的免费权益，不是永久可用保证。
 
