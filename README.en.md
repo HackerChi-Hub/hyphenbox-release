@@ -45,12 +45,17 @@ The [latest release](https://github.com/HackerChi-Hub/hyphenbox-release/releases
 | System | Installer | Requirements |
 |---|---|---|
 | macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_universal.dmg) | macOS 13+, Apple Silicon / Intel |
+| Windows | [EXE installer](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_x64-setup.exe) | Windows 10 / 11, x64 |
+| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_x64_en-US.msi) | Windows 10 / 11, x64 |
+| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_amd64.AppImage) | x64 desktop Linux; system keyring / Secret Service required |
+| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_amd64.deb) | x64 desktop Linux; system keyring / Secret Service required |
+| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox-1.0.5-1.x86_64.rpm) | x64 desktop Linux; system keyring / Secret Service required |
 
-Version **1.0.5 is a universal macOS release** for Apple Silicon and Intel. Windows/Linux have no 1.0.5 installers; their actual [1.0.4 downloads remain available](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.4) and are not relabelled.
+Version **1.0.5** is available for universal macOS, Windows x64 EXE/MSI and Linux x64 AppImage/deb/rpm. Windows was built locally with MSVC and Linux with WSL Ubuntu 22.04. Both passed core and desktop regression tests; the AppImage passed isolated startup, catalog verification and API authentication checks.
 
 **This release's validation scope:** builds, offline regressions, configuration syntax, installation and UI checks. No new live model, Agent tool-task or failover result is claimed. [Historical 1.0.4 validation](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_macos.validation.json) retains its original version.
 
-The Windows/Linux 1.0.4 installers include the signed built-in catalog without a preconfigured online catalog service. Model verification, routing and requests still work with your own keys; online catalog refresh requires a separately configured controlled service.
+The Windows/Linux 1.0.5 installers include the signed built-in catalog without a preconfigured online catalog service. Model verification, routing and requests still work with your own keys; online catalog refresh requires a separately configured controlled service.
 
 ![HyphenBox dashboard, Chinese application UI](screenshots/dashboard-1.0.5.png)
 
