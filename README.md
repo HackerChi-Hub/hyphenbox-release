@@ -157,11 +157,16 @@ Agnes 每次派发前按所选型号和规格读取官方当前价格，未确�
 | 系统 | 安装包 | 要求 |
 |---|---|---|
 | macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.7/HyphenBox_1.0.7_universal.dmg) | macOS 13 及以上，Apple 芯片 / Intel |
+| Windows | [常规安装 EXE](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.7/HyphenBox_1.0.7_x64-setup.exe) | Windows 10 / 11，x64 |
+| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.7/HyphenBox_1.0.7_x64_en-US.msi) | Windows 10 / 11，x64 |
+| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.7/HyphenBox_1.0.7_amd64.AppImage) | x64 桌面发行版，需要系统密钥环 / Secret Service |
+| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.7/HyphenBox_1.0.7_amd64.deb) | x64 桌面发行版，需要系统密钥环 / Secret Service |
+| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.7/HyphenBox-1.0.7-1.x86_64.rpm) | x64 桌面发行版，需要系统密钥环 / Secret Service |
 
-本次 **1.0.7 提供 macOS 通用包**，支持 Apple 芯片与 Intel。Windows/Linux 本轮由作者在其他设备构建，尚无 1.0.7 安装件；不把旧包标成新版。
+本次 **1.0.7** 已提供 macOS、Windows、Linux 三平台安装包。
 
 **本轮验证范围**：1.0.7 Mac 安装、实际界面、平台与参数选择、历史清理与撤销、旧记录和文件保留，以及本地协议故障与免费条件回归。本轮未逐平台新增真实生成，也未新增对话换路或 Win/Linux 运行结论。
-Windows/Linux 继续使用[已公开的1.0.5安装件](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.5)，不包含1.0.6及之后新增的媒体工具。原版Windows使用本机MSVC、Linux使用WSL Ubuntu 22.04构建，原有回归和Linux隔离启动、目录验签与鉴权记录保留原版本标记。1.0.5 Windows/Linux使用内置签名目录，未预置在线目录服务；模型核验、路由和调用仍可使用本人的密钥，在线目录刷新需另行配置受控服务。
+Windows/Linux 现已补齐 **1.0.7**：Windows x64 EXE/MSI、Linux x64 AppImage/deb/rpm，包含媒体页签与 Harness 媒体工具。Windows 使用本机 MSVC，Linux 使用 WSL Ubuntu 22.04；两端执行核心与桌面回归，AppImage 检查隔离启动、目录验签及本地鉴权。未新增 Windows/Linux 真实媒体生成或 Agent 调用结论。历史单条移除、批量清理、撤销与可复用平台协议配置随包提供。 Windows/Linux 使用内置签名目录，未预置在线目录服务；在线刷新需另行配置，Linux 保险箱需要桌面 Secret Service。
 
 软件免费下载，不需要注册黑粉盒子账号；调用平台 API 通常仍需自行注册平台账户和申请凭据。部分平台需要国际网络，地区、实名、支付与额度条件以平台官方要求为准。
 
