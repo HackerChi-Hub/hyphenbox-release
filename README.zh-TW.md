@@ -18,11 +18,11 @@
 <!-- recent-features:start -->
 ## 近期新增與改進（最近 5 項）
 
-- **1.0.5** · 移除底部固定欄，步驟編號保留在左側與關鍵按鈕，模型操作按鈕對齊並依內容寬度顯示。
-- **1.0.5** · DeepSeek Harness 作為首選，保留備份後寫入與撤銷，其他 Agent 依選擇展開。
-- **1.0.5** · 依官方文件提供 OpenCode、Cline、Roo Code、Continue、Codex CLI 與通用相容用戶端設定；本輪未做真實呼叫實測。
-- **1.0.5** · 首頁合併重複內容，保留免費成果、今日概況與贊助碼，明細和診斷按需展開。
-- **1.0.5** · 手動設定預設 free，畫面令牌保持遮罩，複製時才讀取；移除無法直連本機的 Cursor 舊指引。
+- **1.0.6** · 第3步開始使用統一Agent、圖片及影片入口，左側保留三步主流程，生成與儲存左右對齊。
+- **1.0.6** · 圖片與影片依已保存金鑰選平台及模型；缺對應金鑰不提交，免金鑰渠道另行標明。
+- **1.0.6** · Harness一鍵接入對話與8項原生媒體工具，不需額外腳本環境，可指定平台及金鑰編號。
+- **1.0.6** · 新增Agnes三款Flash圖片與Flash影片適配，每次提交先核對官方當前零價，不自動切付費型號。
+- **1.0.6** · 任務先落盤，保留實際平台、型號及響應；冪等防重，恢復只處理原任務，減少背景金鑰圈打擾。
 <!-- recent-features:end -->
 
 <!-- evergreen:demos:start -->
@@ -37,11 +37,11 @@
 影片示範的是拍攝時的版本；安裝套件與目前功能以本頁正式發行資訊為準。影片以中文講解。
 <!-- evergreen:demos:end -->
 
-**當前正式版：1.0.5** · [發行說明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.5)
+**當前正式版：1.0.6** · [發行說明](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.6)
 
-![黑粉盒子 1.0.5：免費成果、今日概況與左側步驟導覽](screenshots/dashboard-1.0.5.png)
+![黑粉盒子 1.0.6：免費成果、今日概況與左側步驟導覽](screenshots/dashboard-1.0.6.png)
 
-截圖拍攝於 2026 年 10 月 31 日，來自安裝後的 macOS 1.0.5 正式版。數字代表拍攝設備當時的狀態，不代表所有使用者都能呼叫相同數量的模型；不展示金鑰、帳戶資訊或私人對話。歷史換路圖另外標註版本。
+截圖拍攝於 2026 年 11 月 2 日，來自安裝後的 macOS 1.0.6 正式版。數字代表拍攝設備當時的狀態，不代表所有使用者都能呼叫相同數量的模型；不展示金鑰、帳戶資訊或私人對話。歷史換路圖另外標註版本。
 
 <!-- evergreen:capabilities:start -->
 ## 它能做什麼
@@ -55,7 +55,9 @@
 | 模型發現與核驗 | 用自己的金鑰拉取模型列表，篩選免費模型、批次加入併傳送最小真實請求；對話和向量模型按用途驗證，不把向量模型拿去做聊天測試 |
 | 費用與能力標識 | 區分完全免費、免費額度、扣餘額、價格未知和自費；展示核驗狀態、工具呼叫能力等資訊，未知價格不會自動算免費 |
 | 本地統一路由 | 只監聽 `127.0.0.1`，提供相容介面、多金鑰嘗試、限流冷卻和故障切換；免費路線與一般自動路線分開 |
-| Agent 接入 | 首選 DeepSeek Harness，可備份後寫入及撤銷；OpenCode、Cline、Roo Code、Continue、Codex CLI 與通用相容用戶端提供官方文件設定，未宣稱本輪實測通過 |
+| Agent 接入 | 首選 DeepSeek Harness，一次接入對話與圖片／影片工具，支援備份與撤銷；原生工具隨安裝包提供，無需另裝執行環境。其他 Agent 保留官方文件設定指引 |
+| 免費圖片與影片工具 | 第3步選擇Agent、圖片或影片；依已保存金鑰選平台及模型。圖片支援Agnes三款Flash與Pollinations免金鑰介面，影片支援Agnes Flash與智譜舊版Flash；不自動切付費 |
+| 媒體任務與檔案 | 先儲存任務再提交，同一任務不重複生成；保留狀態、事件與檔案雜湊。已受理影片只查詢原任務，重新開啟可恢復查詢 |
 | 自願贊助 | 三平臺首頁直接顯示隨包贊助碼，不依賴用量或網路；贊助不解鎖功能，也不影響免費使用 |
 | 呼叫診斷與統計 | 檢視本機請求與詞元用量；最近呼叫診斷顯示輸出預算、結束原因等資訊，幫助區分輸出長度限制、限流和上游錯誤 |
 | 獨立目錄更新 | 軟體定期讀取受控的簽名目錄，驗證簽名、版本和檔案雜湊；更新資源資訊不必重新下載安裝包 |
@@ -64,25 +66,41 @@
 
 免費檔、一次性試用、限時活動與開源自託管不是同一回事。先看免費型別、申請條件和核對日期，再回到平臺官方頁面確認自己賬戶的權益。資料卡里的模型清單也不能代替本機真實呼叫。
 
-![免費 API 雷達：資料卡、候選、條件與核對日期](screenshots/free-api-1.0.5.png)
+![免費 API 雷達：資料卡、候選、條件與核對日期](screenshots/free-api-1.0.6.png)
 
 ### 模型與路由
 
 模型列表來自你自己的憑據，路由資格來自本機核驗結果。可以批次加入免費模型、核驗待驗證路線，也可以重新核驗、停用或刪除單條路線。向量模型走向量介面；語音、影象、影片與重排序等用途目前不能全部自動核驗，也不會混入聊天介面。
 
-![模型操作：拉取、新增免費模型與批次核驗](screenshots/routes-1.0.5.png)
+![模型操作：拉取、新增免費模型與批次核驗](screenshots/routes-1.0.6.png)
 
 ### 接入 Agent
 
 統一地址是 `http://127.0.0.1:17688/v1`，客戶端使用黑粉盒子的本地統一令牌，不需要逐個平臺填寫上游金鑰。DeepSeek Harness 可以直接寫入配置並撤銷；其他客戶端按應用內指引手動填寫。面向智慧體客戶端的模型列表會篩掉已實測不支援工具呼叫的路線。
 
-Harness 使用官方原生 OpenAI 適配。寫入只追加黑粉盒子的受管設定層，並在使用者環境檔中儲存本機令牌，不複製上游金鑰；原有提供商與私人會話保留。首次連接後請新啟 Harness 程序、建立新會話；既有會話的模型選擇不變。有免費候選時預設選擇 `free`，`auto` 可能使用已加入的付費路線。撤銷只移除這層設定及其令牌，不刪除其他設定或會話。
+Harness 使用官方對話適配器與 MCP 用戶端外掛，追加受管對話設定與原生媒體工具，不複製上游金鑰；原有提供商及私人會話保留。連接後請新啟 Harness 程序、建立新會話。一鍵接入預設 `free`，沒有合格免費對話模型時停止寫入，不自動改選付費路線。撤銷會移除受管對話、媒體工具與本機令牌，不刪除其他設定或會話。
 
-![首選 Harness：受管接入與按需展開的介面參數](screenshots/connect-1.0.5.png)
+![首選 Harness：受管接入與按需展開的介面參數](screenshots/connect-1.0.6.png)
 
-按左側編號依次完成 **1 新增金鑰 → 2 核驗模型 → 3 接入 Agent**，隨後在接入頁展開「4 開始使用」。底部不再放固定欄，關鍵按鈕保留步驟號並依內容寬度排列。Harness 預設排在第一位，其他 Agent 依選擇展開。手動範本預設 `free`，令牌在畫面遮罩，主動複製時才填入；本輪僅核對官方文件與設定格式，未進行新的真實呼叫。
+左側統一為 **1 新增金鑰 → 2 核驗模型 → 3 開始使用**。第3步包含「接入Agent／生成圖片／生成影片」；直接生成媒體不用先連接Agent，文字模型仍須在第2步核驗。Harness接入後新啟進程、新建會話。底部沒有固定欄，手動範本預設free。安裝版原生橋已由Harness獨立會話完成渠道查詢、圖片生成、查詢及儲存；影片提交與佇列恢復另做真實請求，未取得成片。其他Agent指引不代表本輪實測。
 
-![OpenCode：官方文件設定與免費預設路線](screenshots/opencode-1.0.5.png)
+### 圖片與影片
+
+在「3 開始使用」選生成圖片或影片，再選平台、已保存金鑰和模型，按 **1 生成 → 2 儲存到下載目錄** 操作。只列已實作的對應能力；缺少金鑰不能提交，免金鑰介面另行標示。歷史顯示實際平台與型號，切換平台不會改動或重交舊任務。Harness也可明確指定平台、模型和金鑰編號，工具拿不到Key值。
+
+Agnes圖片使用本人已保存金鑰，支援agnes-image-2.5-flash、agnes-image-2.1-flash、agnes-image-2.0-flash，僅開放本期核價的1K檔與三種畫幅。每次提交前核對官方當前零價，無法確認便停止。本期2.5 Flash已真實取得可解碼的1024×1024 PNG，其餘型號依帳戶實測狀態顯示。這是限時零價活動，不承諾永久免費。
+
+圖片使用 Pollinations Classic 公開免金鑰端點，保留平台標誌，最多768×768像素面積，同一出口網路串行且至少間隔45秒。描述經網址傳送並共用快取，請勿輸入私人資料。
+
+![免費圖片：描述、真實結果與儲存按鈕並排](screenshots/media-image-1.0.6.png)
+
+影片優先請求 Agnes Video 2.5 Flash，固定文字生成、720P 檔與 4 秒請求；每次派發先核對官方定價表目前體驗價為零，無法核實便停止。2026-11-02 真實請求連續返回「影片佇列已滿」，沒有任務編號，本期未取得影片成片。已受理任務只恢復查詢，不重複生成；明確未受理的擁擠請求可間隔後手動恢復。CogVideoX-Flash 保留為需本人智譜標準金鑰的明確選擇，未實測。不會自動使用收費的 Agnes 2.5 或其他付費影片渠道。限時活動可能變更，實際尺寸及音軌依返回檔案為準。
+
+![免費影片：Agnes限時零價與真實佇列擁擠紀錄](screenshots/media-video-1.0.6.png)
+
+免費政策有複核期限，過期停止新生成，既有檔案仍可讀取。取得上游編號後只查詢、下載原任務；提交結果未知不自動重交。響應記錄有大小保護並標記完整性，媒體不換算為文字Token或虛構節省金額。
+
+![OpenCode：官方文件設定與免費預設路線](screenshots/opencode-1.0.6.png)
 
 官方依據：[OpenCode](https://opencode.ai/docs/providers/#custom-provider)、[Cline](https://docs.cline.bot/provider-config/openai-compatible)、[Roo Code](https://docs.roocode.com/providers/openai-compatible)、[Continue](https://docs.continue.dev/customize/model-providers/top-level/openai)、[Codex CLI](https://developers.openai.com/codex/config-advanced/#custom-model-providers)，核對於 2026-10-31。[Cursor 官方說明](https://cursor.com/docs/settings/api-keys)請求經過其伺服器，不能直接使用本機迴環地址，舊指引已移除。
 
@@ -107,7 +125,7 @@ Harness 使用官方原生 OpenAI 適配。寫入只追加黑粉盒子的受管�
 
 目前工具輪已交回全部工具結果時，可整理為已執行檢查點，移除舊提供商簽名後交給替代模型接續，不會自動重放舊工具呼叫。缺結果、編號衝突或已輸出一半的串流回答仍不能保證無縫恢復，換路也不保證模型能力和風格不變。最近五筆可在一鍵連接的自動換路與工具接續記錄查看；接通上游不代表整個任務完成。
 
-![新增金鑰表單與授權說明入口（原生介面局部，裁去帳戶清單）](screenshots/vault-1.0.5.png)
+![新增金鑰表單與授權說明入口（原生介面局部，裁去帳戶清單）](screenshots/vault-1.0.6.png)
 
 以下是 1.0.3 的歷史真實換路記錄（2026-10-24，未改標為本版新圖）：首家平臺的賬戶令牌額度容納不下請求，隨後改走另一家免費路線。這是當時的測試結果，不代表所有賬戶或任務都能成功。
 
@@ -125,22 +143,18 @@ Harness 使用官方原生 OpenAI 適配。寫入只追加黑粉盒子的受管�
 
 ## 下載安裝
 
-[最新版下載入口](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)會隨正式發行更新。下面是當前 **1.0.5** 實際已上傳的安裝件；未列出的平臺不代表已有本版安裝包：
+[最新版下載入口](https://github.com/HackerChi-Hub/hyphenbox-release/releases/latest)會隨正式發行更新。下面是當前 **1.0.6** 實際已上傳的安裝件；未列出的平臺不代表已有本版安裝包：
 
 | 系統 | 安裝套件 | 要求 |
 |---|---|---|
-| macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_universal.dmg) | macOS 13 及以上，Apple 晶片 / Intel |
-| Windows | [一般安裝 EXE](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_x64-setup.exe) | Windows 10 / 11，x64 |
-| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_x64_en-US.msi) | Windows 10 / 11，x64 |
-| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_amd64.AppImage) | x64 桌面發行版，需要系統金鑰環 / Secret Service |
-| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_amd64.deb) | x64 桌面發行版，需要系統金鑰環 / Secret Service |
-| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox-1.0.5-1.x86_64.rpm) | x64 桌面發行版，需要系統金鑰環 / Secret Service |
+| macOS | [通用 DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.6/HyphenBox_1.0.6_universal.dmg) | macOS 13 及以上，Apple 晶片 / Intel |
 
-本次三平臺均為 **1.0.5**：macOS 通用套件，Windows x64 EXE/MSI，Linux x64 AppImage/deb/rpm。Windows 使用本機 MSVC 建構，Linux 使用 WSL Ubuntu 22.04；兩端完成核心與桌面模組迴歸，AppImage 通過隔離啟動、目錄驗章與本機介面鑑權檢查。
+本次 **1.0.6 提供 macOS 通用包**，支援 Apple 晶片與 Intel。Windows/Linux 尚未發布1.0.6安裝件，不把舊版標成新版；下載範圍依本頁表格和最新發行資產為準。
 
-**本輪驗證範圍**：構建、離線回歸、設定格式、實際安裝與介面檢查；未新增上游模型、Agent 工具任務或自動換路真實呼叫結論。[1.0.4 歷史驗收](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_macos.validation.json)保留原版本標記。
+**本輪驗證範圍**：真實圖片檔案、Harness媒體工具、任務冪等與恢復、Mac安裝及介面驗收；Agnes影片真實請求被佇列擁擠拒絕，未取得成片，故障測試明確標為模擬，未做Win/Linux本版執行驗收。
 
-本次 1.0.5 Windows/Linux 安裝套件使用內建簽章目錄，未預設線上目錄服務；模型核驗、路由及呼叫仍可使用自己的金鑰。目錄線上更新需另行設定受控服務。
+
+Windows/Linux 繼續使用[已公開的1.0.5安裝套件](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.5)，不包含本次1.0.6媒體工具。原版Windows使用本機MSVC、Linux使用WSL Ubuntu 22.04建構；原有迴歸、Linux隔離啟動、目錄驗章與鑑權證據保留原版本。1.0.5 Windows/Linux使用內建簽章目錄，未預設線上目錄服務；模型核驗、路由及呼叫仍可使用本人的金鑰，線上目錄刷新需另行設定受控服務。
 
 軟體免費下載，不需要註冊黑粉盒子賬號；呼叫平臺 API 通常仍需自行註冊平臺賬戶和申請憑據。部分平臺需要國際網路，地區、實名、支付與額度條件以平臺官方要求為準。
 
@@ -149,8 +163,9 @@ Harness 使用官方原生 OpenAI 適配。寫入只追加黑粉盒子的受管�
 
 1. 在「免費資源」檢視資源條件，到平臺官方入口申請自己的金鑰，再存入「新增金鑰」。
 2. 在「核驗模型」拉取模型列表、加入候選並核驗；透過後才能作為可用路線使用。
-3. 在「接入 Agent」選擇首選 Harness 或其他 Agent，寫入設定或複製參數。
-4. 保持黑粉盒子執行，新啟 Agent、新建會話，模型選 `free`，再執行自己的任務。
+3. 在「開始使用」選用途：接入 Agent、生成圖片或生成影片。Agent 首選 Harness；媒體頁選平台、已保存金鑰及模型後生成並儲存。
+
+接入 Agent 後保持黑粉盒子執行，新啟 Agent、新建會話，模型選 `free`，再執行自己的任務。直接生成媒體不用先接入 Agent。
 
 ### 首次開啟與簽名
 
@@ -159,6 +174,8 @@ Harness 使用官方原生 OpenAI 適配。寫入只追加黑粉盒子的受管�
 請只從本倉庫的發行頁下載，並核對隨發行提供的 SHA-256 校驗檔案。**更新器簽名與系統商業程式碼簽名是兩件事。**
 
 ## 介面與相容範圍
+
+媒體獨立提供 `/v1/images/generations`、`/v1/videos/generations` 與 `/v1/media/jobs`；查詢與下載均需本機令牌，尚未完成時只查詢原任務。
 
 提供 `/v1/models`、`/v1/chat/completions`（含流式）、`/v1/embeddings`，以及舊版 `/v1/completions` 和 `/v1/responses` 的相容轉換。請求需要本地統一令牌，模型能力與可用範圍取決於實際路線。
 
@@ -188,6 +205,7 @@ Harness 使用官方原生 OpenAI 適配。寫入只追加黑粉盒子的受管�
 - Linux：`~/.local/share/top.hyphentech.hyphenbox/logs/hyphenbox.log`
 
 日誌有認證資訊脫敏處理，但提交前仍請檢查內容。**不要把完整金鑰、令牌、賬號資訊、私人對話或私有服務地址放進 Issue、日誌附件和截圖。**
+媒體描述、上游任務編號、響應和檔案會留在本機供恢復；不把私有原始記錄放入公開截圖或發行資產。
 <!-- evergreen:installation-privacy:end -->
 
 
