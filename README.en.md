@@ -17,11 +17,11 @@ The application is free to download and requires no HyphenBox account. Apply for
 <!-- recent-features:start -->
 ## Recent features and improvements (5 items)
 
-- **1.0.6** · Step 3 groups Agent setup, images and video into one workflow, with aligned generation and save panels.
-- **1.0.6** · Select platforms and models using stored keys. Missing matching keys block submission; keyless endpoints are marked separately.
-- **1.0.6** · One-click Harness setup adds chat and eight native media tools, with explicit provider and credential selection and no extra script runtime.
-- **1.0.6** · Three Agnes Flash image models and Flash video check the current official zero price before every submission, with no paid-model fallback.
-- **1.0.6** · Durable jobs record the actual provider, model and responses. Idempotency prevents duplicates; recovery resumes the original job and reduces background Keychain interruptions.
+- **1.0.7** · Image/video history supports individual removal, finished-job cleanup and undo across restarts, with six recent entries shown by default.
+- **1.0.7** · Reusable protocol profiles unify platforms, stored credentials, models and typed parameters without new code for each same-protocol model.
+- **1.0.7** · Recurring allowances, zero-price promotions, community queues and new-user trials have distinct conditions. Paid and undeclared keys are rejected.
+- **1.0.7** · Submissions, queries, failed responses and downloads retain separate receipts. Recovery resumes the original job; cleanup preserves files and idempotency.
+- **1.0.7** · The eight native Harness media tools read the same channel/parameter profiles, while image and video remain in the unified Step 3 workflow.
 <!-- recent-features:end -->
 
 <!-- evergreen:demos:start -->
@@ -36,7 +36,7 @@ The application is free to download and requires no HyphenBox account. Apply for
 These videos show the versions available when recorded. Use the current release information on this page for downloads and capabilities. Narration is in Chinese.
 <!-- evergreen:demos:end -->
 
-**Current stable release: 1.0.6** · [Release notes](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.6)
+**Current stable release: 1.0.7** · [Release notes](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.7)
 
 ## Download and install
 
@@ -44,18 +44,18 @@ The [latest release](https://github.com/HackerChi-Hub/hyphenbox-release/releases
 
 | System | Installer | Requirements |
 |---|---|---|
-| macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.6/HyphenBox_1.0.6_universal.dmg) | macOS 13+, Apple Silicon / Intel |
+| macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.7/HyphenBox_1.0.7_universal.dmg) | macOS 13+, Apple Silicon / Intel |
 
-Version **1.0.6 is a universal macOS release** for Apple Silicon and Intel. No 1.0.6 Windows/Linux installers have been published. Older builds are not relabelled; the table and latest release assets define the current download scope.
+Version **1.0.7 is a universal macOS release** for Apple Silicon and Intel. Windows/Linux builds are being handled separately by the author; no 1.0.7 installers for those systems are published in this release. Older builds are not relabelled.
 
-**Validation scope:** real image files, Harness media calls, task idempotency/recovery, Mac installation and UI checks. Real Agnes video requests were refused because its queue was full; no generated video was obtained. Fault-injection tests are explicitly synthetic. No new chat-failover or Windows/Linux runtime result is claimed.
+**Validation scope:** installed 1.0.7 Mac UI, platform and parameter selection, history cleanup/undo, original records and file preservation, plus local protocol fault and free-condition regressions. No new live generation across added platforms, chat failover or Windows/Linux runtime result is claimed.
 
-Windows/Linux continue to use the [published 1.0.5 installers](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.5), without the new 1.0.6 media tools. That Windows release was built locally with MSVC and Linux with WSL Ubuntu 22.04. Its existing regressions, isolated Linux startup, catalog-signature and authentication evidence retain their original version. Those installers contain the signed built-in catalog without a preconfigured online catalog service. Model verification and routing still use your own keys; online catalog refresh requires a separately configured controlled service.
+Windows/Linux continue to use the [published 1.0.5 installers](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.5), without the media tools added in 1.0.6 and later. That Windows release was built locally with MSVC and Linux with WSL Ubuntu 22.04. Its existing regressions, isolated Linux startup, catalog-signature and authentication evidence retain their original version. Those installers contain the signed built-in catalog without a preconfigured online catalog service. Model verification and routing still use your own keys; online catalog refresh requires a separately configured controlled service.
 
 
-![HyphenBox dashboard, Chinese application UI](screenshots/dashboard-1.0.6.png)
+![HyphenBox dashboard, Chinese application UI](screenshots/dashboard-1.0.7.png)
 
-Screenshots were captured on 2026-11-02 from the installed macOS 1.0.6 stable release. Counts describe that device at capture time, not guaranteed availability. Keys, account details and private conversations are not shown. The historical failover image keeps its original version label; translated documentation does not imply a translated application UI.
+Screenshots were captured on 2026-11-02. The dashboard and updated media views come from the installed macOS 1.0.7 stable release. Other screenshots retain their historical 1.0.6 filenames. Counts describe that device; account/private information is cropped out. Historical failover evidence keeps its original version. Translated documentation does not imply a translated application UI.
 
 <!-- evergreen:capabilities:start -->
 ## What HyphenBox does
@@ -68,7 +68,7 @@ Screenshots were captured on 2026-11-02 from the installed macOS 1.0.6 stable re
 | Cost and capability labels | Separate fully free, limited free quota, balance deductions, unknown prices and paid usage; unknown prices do not automatically qualify as free |
 | Local routing | Listen only on `127.0.0.1`; provide a compatible endpoint, multiple-key attempts, rate-limit cooldown and failover |
 | Agent setup | DeepSeek Harness connects chat and image/video tools in one action, with backup and undo. Native tools ship with the installer; no additional runtime is required. Other Agents retain official-documentation guides |
-| Free image and video tools | Step 3 groups Agent setup, images and video. Choose a platform, stored key and model. Images support three Agnes Flash models and keyless Pollinations; video supports Agnes Flash and historical Zhipu Flash. No paid fallback |
+| Free image and video tools | Unified platform, credential and model selection with reusable protocol profiles. Free plans and trials are distinct; history supports individual removal, batch cleanup and undo. No paid fallback |
 | Durable media tasks | Save before submission, prevent duplicate generation and preserve state, events and file hashes. Accepted videos resume by querying the original upstream task; uncertain submissions are not repeated |
 | Optional sponsorship | The bundled QR code is directly visible on all three platforms without a usage or network gate; sponsorship does not unlock features |
 | Diagnostics | Inspect local requests, token usage, output budgets and finish reasons to distinguish truncation, rate limits and upstream errors |
@@ -98,19 +98,28 @@ The sidebar is **1 Add a key → 2 Verify models → 3 Start using**. Step 3 con
 
 ### Images and videos
 
-In **3 Start using**, choose images or video, then select a platform, stored key and model. Follow **1 Generate → 2 Save to Downloads**. Only implemented capabilities are listed; missing keys block submission and public keyless endpoints are clearly marked. History records the actual platform and model. Switching platforms never modifies or resubmits an existing job. Harness can also explicitly select a provider, model and credential ID without receiving the key value. Media tasks remain separate from the text-chat model pool.
+In Step 3, select images or video, then a platform, model and your stored credential. Use **1 Generate → 2 Save to Downloads**. Keyless services are identified separately. Account-dependent free plans require the necessary platform settings and explicit account confirmation; mark the corresponding credential as free allowance. Paid, undeclared and other-platform credentials are rejected.
 
-Agnes images use your stored key with agnes-image-2.5-flash, agnes-image-2.1-flash or agnes-image-2.0-flash. This integration exposes the reviewed 1K tier and three aspect ratios. Every submission verifies the current official zero price, otherwise it stops. A real 2.5 Flash call returned a decoded 1024×1024 PNG; the other models retain their own account-validation status. These are temporary zero-price promotions, not promises of permanent free access.
+Image profiles cover Agnes, Zhipu CogView-3-Flash, Cloudflare Workers AI, AI Horde, ModelScope, Stability and WaveSpeed. Video profiles cover Agnes Video Flash, Zhipu CogVideoX-Flash and WaveSpeed. The legacy keyless Pollinations Classic image entry remains available. Recurring allowances, temporary zero prices, community queues, account entitlements and one-time new-user trials have separate labels. A trial is not permanent free access. Coverage follows official documentation; account rights, regional access, limits and upstream availability still apply.
 
-Images use the public keyless Pollinations Classic endpoint, retain its logo and are limited to a 768×768 pixel area. Requests are serialized with at least 45 seconds between them per egress network. Prompts are transmitted in URLs and share a URL cache; do not send private information. Complex prompt adherence is not guaranteed.
+![Images: unified platform, model, stored credential and parameter selection](screenshots/media-image-1.0.7.png)
 
-![Free image generation with the prompt, real result and save action side by side](screenshots/media-image-1.0.6.png)
+Agnes checks the current official zero price for the selected model and specification before each submission. Cloudflare requires Workers Free. Trial services require confirmation that the selected model has free credits and the account has no paid balance or billing. Requests stop when free conditions are unmet. There is no automatic top-up, paid-key fallback or cross-platform resubmission. Anonymous AI Horde jobs are shared publicly; Pollinations prompts travel in URLs and use shared URL-based caching. Do not send private information.
 
-Video prefers Agnes Video 2.5 Flash: text-only generation, the 720P tier and a four-second request. Before every dispatch, the official pricing table must confirm a current zero promotional price; an unavailable or changed price stops submission. Real requests on 2026-11-02 repeatedly returned a full video queue with no video ID, so no real generated video was obtained in this round. Accepted tasks resume polling without resubmission; explicitly refused busy requests can be manually resumed after a delay. CogVideoX-Flash remains an explicit, untested alternative requiring your own Zhipu standard key. The paid Agnes 2.5 model and other paid video channels are never automatic fallbacks. Promotions may change; actual dimensions and audio depend on the returned file.
+![Videos: the same selection and durable task workflow](screenshots/media-video-1.0.7.png)
 
-![Free video entry showing the temporary Agnes zero price and actual full-queue record](screenshots/media-video-1.0.6.png)
+Profiles describe HTTP paths, typed parameters, response fields, asynchronous polling and model lists. New models using the same protocol reuse the profile through an updated list or an official model ID. Different protocols or input formats still require profile changes; this is not universal support for every image-editing or reference-video API. Platform settings support existing and independent custom profiles. Keys stay in the vault. Media profiles ship with this application version; local changes apply immediately. The signed resource catalog does not yet deliver media protocol profiles.
 
-Reviewed policies expire and then block new generation while completed files remain readable. Accepted tasks are only queried or downloaded; uncertain submissions are not repeated. Bounded response records mark completeness. Media usage is not converted to text tokens or fictitious savings.
+![Platform settings: model lists, free conditions and reusable protocol profiles](screenshots/media-settings-1.0.7.png)
+
+History shows the latest six entries by default, with older entries expandable. Remove individual entries or clear finished image/video jobs; active work is protected. Undo the last cleanup even after reopening. Cleanup organizes the history view while retaining generated and exported files, original request records and idempotency keys. Removing history does not resubmit a generation or free the media files' disk space.
+
+![History: individual removal, batch cleanup and undo](screenshots/media-history-1.0.7.png)
+
+Jobs are stored before submission with the actual provider, model, parameters and protocol snapshot. Accepted jobs only poll and download the original task; unknown submissions are not resubmitted. Each submission, query, failed HTTP response and download has a separate receipt. Files are checked for format, dimensions, duration and hash. The native Harness media tools read the same channel/parameter profiles, without a new tool per model. Media usage is not converted to text tokens or invented savings.
+
+This release verifies installation, selection, cleanup/undo and preservation, with local protocol fixtures for recovery and paid-credential rejection. As requested, no new live generation was performed across the added providers. Real Agnes images and Harness calls from 1.0.6 remain historical evidence. Its video queue was full and produced no video, so that history does not establish generation success for the newly added profiles.
+
 
 ![OpenCode official-documentation configuration with a free default](screenshots/opencode-1.0.6.png)
 
