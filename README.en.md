@@ -45,12 +45,17 @@ The [latest release](https://github.com/HackerChi-Hub/hyphenbox-release/releases
 | System | Installer | Requirements |
 |---|---|---|
 | macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.7/HyphenBox_1.0.7_universal.dmg) | macOS 13+, Apple Silicon / Intel |
+| Windows | [EXE installer](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.7/HyphenBox_1.0.7_x64-setup.exe) | Windows 10 / 11, x64 |
+| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.7/HyphenBox_1.0.7_x64_en-US.msi) | Windows 10 / 11, x64 |
+| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.7/HyphenBox_1.0.7_amd64.AppImage) | x64 desktop Linux; system keyring / Secret Service required |
+| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.7/HyphenBox_1.0.7_amd64.deb) | x64 desktop Linux; system keyring / Secret Service required |
+| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.7/HyphenBox-1.0.7-1.x86_64.rpm) | x64 desktop Linux; system keyring / Secret Service required |
 
-Version **1.0.7 is a universal macOS release** for Apple Silicon and Intel. Windows/Linux builds are being handled separately by the author; no 1.0.7 installers for those systems are published in this release. Older builds are not relabelled.
+Version **1.0.7** is available on macOS, Windows and Linux.
 
 **Validation scope:** installed 1.0.7 Mac UI, platform and parameter selection, history cleanup/undo, original records and file preservation, plus local protocol fault and free-condition regressions. No new live generation across added platforms, chat failover or Windows/Linux runtime result is claimed.
 
-Windows/Linux continue to use the [published 1.0.5 installers](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.5), without the media tools added in 1.0.6 and later. That Windows release was built locally with MSVC and Linux with WSL Ubuntu 22.04. Its existing regressions, isolated Linux startup, catalog-signature and authentication evidence retain their original version. Those installers contain the signed built-in catalog without a preconfigured online catalog service. Model verification and routing still use your own keys; online catalog refresh requires a separately configured controlled service.
+Windows/Linux **1.0.7** installers are now available: Windows x64 EXE/MSI and Linux x64 AppImage/deb/rpm, including the media tabs and Harness media tools. Windows was built with local MSVC and Linux with WSL Ubuntu 22.04. Core and desktop regressions and isolated AppImage startup, catalog and authentication checks cover this build. No new Windows/Linux live media generation or Agent result is claimed. Windows/Linux include the signed built-in catalog without a preconfigured online service. Online refresh needs separate configuration; the Linux vault requires desktop Secret Service.
 
 
 ![HyphenBox dashboard, Chinese application UI](screenshots/dashboard-1.0.7.png)
