@@ -17,11 +17,11 @@ The application is free to download and requires no HyphenBox account. Apply for
 <!-- recent-features:start -->
 ## Recent features and improvements (5 items)
 
-- **1.0.5** · The fixed bottom bar is removed. Sidebar and key actions retain step numbers; model buttons align and size to their content.
-- **1.0.5** · DeepSeek Harness is the preferred integration, with backup, managed configuration and undo; other Agents expand on selection.
-- **1.0.5** · Official-documentation templates cover OpenCode, Cline, Roo Code, Continue, Codex CLI and generic compatible clients; no new live Agent validation is claimed.
-- **1.0.5** · The overview combines repeated content while retaining free usage, daily metrics and the sponsorship QR; details and diagnostics expand on demand.
-- **1.0.5** · Manual templates default to free; tokens remain masked and are retrieved on copy. The misleading localhost Cursor guide is removed.
+- **1.0.6** · Step 3 groups Agent setup, images and video into one workflow, with aligned generation and save panels.
+- **1.0.6** · Select platforms and models using stored keys. Missing matching keys block submission; keyless endpoints are marked separately.
+- **1.0.6** · One-click Harness setup adds chat and eight native media tools, with explicit provider and credential selection and no extra script runtime.
+- **1.0.6** · Three Agnes Flash image models and Flash video check the current official zero price before every submission, with no paid-model fallback.
+- **1.0.6** · Durable jobs record the actual provider, model and responses. Idempotency prevents duplicates; recovery resumes the original job and reduces background Keychain interruptions.
 <!-- recent-features:end -->
 
 <!-- evergreen:demos:start -->
@@ -36,7 +36,7 @@ The application is free to download and requires no HyphenBox account. Apply for
 These videos show the versions available when recorded. Use the current release information on this page for downloads and capabilities. Narration is in Chinese.
 <!-- evergreen:demos:end -->
 
-**Current stable release: 1.0.5** · [Release notes](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.5)
+**Current stable release: 1.0.6** · [Release notes](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.6)
 
 ## Download and install
 
@@ -44,22 +44,18 @@ The [latest release](https://github.com/HackerChi-Hub/hyphenbox-release/releases
 
 | System | Installer | Requirements |
 |---|---|---|
-| macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_universal.dmg) | macOS 13+, Apple Silicon / Intel |
-| Windows | [EXE installer](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_x64-setup.exe) | Windows 10 / 11, x64 |
-| Windows | [MSI](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_x64_en-US.msi) | Windows 10 / 11, x64 |
-| Linux | [AppImage](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_amd64.AppImage) | x64 desktop Linux; system keyring / Secret Service required |
-| Linux | [deb](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox_1.0.5_amd64.deb) | x64 desktop Linux; system keyring / Secret Service required |
-| Linux | [rpm](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.5/HyphenBox-1.0.5-1.x86_64.rpm) | x64 desktop Linux; system keyring / Secret Service required |
+| macOS | [Universal DMG](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.6/HyphenBox_1.0.6_universal.dmg) | macOS 13+, Apple Silicon / Intel |
 
-Version **1.0.5** is available for universal macOS, Windows x64 EXE/MSI and Linux x64 AppImage/deb/rpm. Windows was built locally with MSVC and Linux with WSL Ubuntu 22.04. Both passed core and desktop regression tests; the AppImage passed isolated startup, catalog verification and API authentication checks.
+Version **1.0.6 is a universal macOS release** for Apple Silicon and Intel. No 1.0.6 Windows/Linux installers have been published. Older builds are not relabelled; the table and latest release assets define the current download scope.
 
-**This release's validation scope:** builds, offline regressions, configuration syntax, installation and UI checks. No new live model, Agent tool-task or failover result is claimed. [Historical 1.0.4 validation](https://github.com/HackerChi-Hub/hyphenbox-release/releases/download/v1.0.4/HyphenBox_1.0.4_macos.validation.json) retains its original version.
+**Validation scope:** real image files, Harness media calls, task idempotency/recovery, Mac installation and UI checks. Real Agnes video requests were refused because its queue was full; no generated video was obtained. Fault-injection tests are explicitly synthetic. No new chat-failover or Windows/Linux runtime result is claimed.
 
-The Windows/Linux 1.0.5 installers include the signed built-in catalog without a preconfigured online catalog service. Model verification, routing and requests still work with your own keys; online catalog refresh requires a separately configured controlled service.
+Windows/Linux continue to use the [published 1.0.5 installers](https://github.com/HackerChi-Hub/hyphenbox-release/releases/tag/v1.0.5), without the new 1.0.6 media tools. That Windows release was built locally with MSVC and Linux with WSL Ubuntu 22.04. Its existing regressions, isolated Linux startup, catalog-signature and authentication evidence retain their original version. Those installers contain the signed built-in catalog without a preconfigured online catalog service. Model verification and routing still use your own keys; online catalog refresh requires a separately configured controlled service.
 
-![HyphenBox dashboard, Chinese application UI](screenshots/dashboard-1.0.5.png)
 
-Screenshots were captured on 2026-10-31 from the installed macOS 1.0.5 stable release. Counts describe that device at capture time, not guaranteed availability. Keys, account details and private conversations are not shown. The historical failover image keeps its original version label; translated documentation does not imply a translated application UI.
+![HyphenBox dashboard, Chinese application UI](screenshots/dashboard-1.0.6.png)
+
+Screenshots were captured on 2026-11-02 from the installed macOS 1.0.6 stable release. Counts describe that device at capture time, not guaranteed availability. Keys, account details and private conversations are not shown. The historical failover image keeps its original version label; translated documentation does not imply a translated application UI.
 
 <!-- evergreen:capabilities:start -->
 ## What HyphenBox does
@@ -71,7 +67,9 @@ Screenshots were captured on 2026-10-31 from the installed macOS 1.0.5 stable re
 | Model verification | Fetch models with your credentials, select free candidates and send small real requests; verify chat and embedding models with their respective endpoints |
 | Cost and capability labels | Separate fully free, limited free quota, balance deductions, unknown prices and paid usage; unknown prices do not automatically qualify as free |
 | Local routing | Listen only on `127.0.0.1`; provide a compatible endpoint, multiple-key attempts, rate-limit cooldown and failover |
-| Agent setup | DeepSeek Harness is preferred, with backup, managed configuration and undo; official-documentation templates cover OpenCode, Cline, Roo Code, Continue, Codex CLI and generic compatible clients; no new live validation is claimed |
+| Agent setup | DeepSeek Harness connects chat and image/video tools in one action, with backup and undo. Native tools ship with the installer; no additional runtime is required. Other Agents retain official-documentation guides |
+| Free image and video tools | Step 3 groups Agent setup, images and video. Choose a platform, stored key and model. Images support three Agnes Flash models and keyless Pollinations; video supports Agnes Flash and historical Zhipu Flash. No paid fallback |
+| Durable media tasks | Save before submission, prevent duplicate generation and preserve state, events and file hashes. Accepted videos resume by querying the original upstream task; uncertain submissions are not repeated |
 | Optional sponsorship | The bundled QR code is directly visible on all three platforms without a usage or network gate; sponsorship does not unlock features |
 | Diagnostics | Inspect local requests, token usage, output budgets and finish reasons to distinguish truncation, rate limits and upstream errors |
 | Independent catalog updates | Verify the controlled catalog's signatures, version and file hashes before applying resource updates without reinstalling the app |
@@ -80,25 +78,41 @@ Screenshots were captured on 2026-10-31 from the installed macOS 1.0.5 stable re
 
 Free tiers, one-time trials, temporary promotions and self-hosted open-source models have different conditions. Check the official provider page and your own account entitlements. A model appearing on a card does not prove that your key can call it.
 
-![Free API radar: cards, candidates and review dates](screenshots/free-api-1.0.5.png)
+![Free API radar: cards, candidates and review dates](screenshots/free-api-1.0.6.png)
 
 ### Verify models and route by capability
 
 Model lists come from your credentials; local verification determines usable routes. Add free candidates in batches, test them, re-test or disable individual routes. Embeddings use embedding endpoints. Audio, image, video and reranking capabilities are not all automatically verified and are not inserted into the chat model pool.
 
-![Model actions: discover, add free models and verify the routes](screenshots/routes-1.0.5.png)
+![Model actions: discover, add free models and verify the routes](screenshots/routes-1.0.6.png)
 
 ### Connect an Agent
 
 Use `http://127.0.0.1:17688/v1` and HyphenBox's local unified token instead of entering every upstream key in the client. DeepSeek Harness configuration can be written and undone; other clients use the in-app instructions. Agent-facing model lists exclude routes tested as lacking tool calling.
 
-Harness uses its official native OpenAI adapter. HyphenBox appends a managed configuration layer and saves only the loopback token in the Harness-home environment file, not upstream keys. Existing providers and private sessions are preserved. Start a new Harness process and session after the initial connection; existing sessions retain their own model selections. New sessions default to `free` when eligible free candidates exist; `auto` may use paid routes you added. Undo removes only the managed layer and its token.
+Harness uses its official chat adapter and MCP client plugin. HyphenBox appends a managed chat layer and native media bridge, without copying provider keys. Existing providers and private sessions remain intact. Start a new Harness process and session after connecting. One-click setup defaults to `free`; without an eligible free chat model it stops rather than selecting a paid route. Undo removes the managed chat layer, media tools and local token while preserving other configuration and sessions.
 
-![Preferred Harness setup and on-demand local API parameters](screenshots/connect-1.0.5.png)
+![Preferred Harness setup and on-demand local API parameters](screenshots/connect-1.0.6.png)
 
-Follow the numbered sidebar: **1 Add a key → 2 Verify models → 3 Connect an Agent**, then expand “4 Start using it” on the connection page. The fixed bottom bar is removed; key buttons retain step numbers and size to their content. Harness is selected first; other guides expand on selection. Manual templates default to `free`. Tokens stay masked and are retrieved only on copy. This release checks official documentation and configuration syntax, without new live Agent requests.
+The sidebar is **1 Add a key → 2 Verify models → 3 Start using**. Step 3 contains Agent setup, image generation and video generation. Direct media generation does not require connecting an Agent first; chat models still require verification in step 2. Start a new Harness process and session after connecting. There is no fixed bottom bar; manual templates default to free. An isolated Harness session used the installed native bridge to list channels, generate an image, query its job and save the verified file. Video submission and queue recovery were tested separately without obtaining a generated video. Guides for other Agents do not imply live validation.
 
-![OpenCode official-documentation configuration with a free default](screenshots/opencode-1.0.5.png)
+### Images and videos
+
+In **3 Start using**, choose images or video, then select a platform, stored key and model. Follow **1 Generate → 2 Save to Downloads**. Only implemented capabilities are listed; missing keys block submission and public keyless endpoints are clearly marked. History records the actual platform and model. Switching platforms never modifies or resubmits an existing job. Harness can also explicitly select a provider, model and credential ID without receiving the key value. Media tasks remain separate from the text-chat model pool.
+
+Agnes images use your stored key with agnes-image-2.5-flash, agnes-image-2.1-flash or agnes-image-2.0-flash. This integration exposes the reviewed 1K tier and three aspect ratios. Every submission verifies the current official zero price, otherwise it stops. A real 2.5 Flash call returned a decoded 1024×1024 PNG; the other models retain their own account-validation status. These are temporary zero-price promotions, not promises of permanent free access.
+
+Images use the public keyless Pollinations Classic endpoint, retain its logo and are limited to a 768×768 pixel area. Requests are serialized with at least 45 seconds between them per egress network. Prompts are transmitted in URLs and share a URL cache; do not send private information. Complex prompt adherence is not guaranteed.
+
+![Free image generation with the prompt, real result and save action side by side](screenshots/media-image-1.0.6.png)
+
+Video prefers Agnes Video 2.5 Flash: text-only generation, the 720P tier and a four-second request. Before every dispatch, the official pricing table must confirm a current zero promotional price; an unavailable or changed price stops submission. Real requests on 2026-11-02 repeatedly returned a full video queue with no video ID, so no real generated video was obtained in this round. Accepted tasks resume polling without resubmission; explicitly refused busy requests can be manually resumed after a delay. CogVideoX-Flash remains an explicit, untested alternative requiring your own Zhipu standard key. The paid Agnes 2.5 model and other paid video channels are never automatic fallbacks. Promotions may change; actual dimensions and audio depend on the returned file.
+
+![Free video entry showing the temporary Agnes zero price and actual full-queue record](screenshots/media-video-1.0.6.png)
+
+Reviewed policies expire and then block new generation while completed files remain readable. Accepted tasks are only queried or downloaded; uncertain submissions are not repeated. Bounded response records mark completeness. Media usage is not converted to text tokens or fictitious savings.
+
+![OpenCode official-documentation configuration with a free default](screenshots/opencode-1.0.6.png)
 
 Sources checked on 2026-10-31: [OpenCode](https://opencode.ai/docs/providers/#custom-provider), [Cline](https://docs.cline.bot/provider-config/openai-compatible), [Roo Code](https://docs.roocode.com/providers/openai-compatible), [Continue](https://docs.continue.dev/customize/model-providers/top-level/openai), [Codex CLI](https://developers.openai.com/codex/config-advanced/#custom-model-providers). [Cursor states that requests pass through its servers](https://cursor.com/docs/settings/api-keys), so the old direct-localhost guide has been removed.
 
@@ -123,9 +137,9 @@ For `free` and `auto`, an unreadable credential is isolated while other eligible
 
 If all tool results in the current turn have returned, the router can build an executed-results checkpoint, remove old provider signatures and let an alternative model continue without replaying old tool calls. Missing results, conflicting IDs and streams that already delivered partial output cannot be promised seamless recovery. A different route can mean a different model and behavior. Client Setup shows the latest five routing/checkpoint records; reaching an upstream does not prove completion of the whole task.
 
-![Add-key form and authorization guide entry, cropped native view excluding the account list](screenshots/vault-1.0.5.png)
+![Add-key form and authorization guide entry, cropped native view excluding the account list](screenshots/vault-1.0.6.png)
 
-Historical 1.0.3 record (2026-10-24, not a new 1.0.5 test): the first provider could not fit the request within the account token allowance, and the router selected another eligible free route. This test result is not a guarantee for every account or task.
+Historical 1.0.3 record (2026-10-24, not a new 1.0.6 test): the first provider could not fit the request within the account token allowance, and the router selected another eligible free route. This test result is not a guarantee for every account or task.
 
 ![Real failover example: account request limit followed by another free route](screenshots/failover.png)
 ### Local usage and current-price estimates
@@ -140,12 +154,13 @@ Dedicated safety classifiers such as Qwen3Guard, Llama Guard and GPT OSS Safegua
 <!-- evergreen:capabilities:end -->
 
 <!-- evergreen:installation-privacy:start -->
-## Follow the four steps
+## Follow the three steps
 
 1. Read the resource conditions, apply at the official provider, and save your own key in the vault.
 2. Fetch models, add candidates and verify them before using them as routes.
-3. Select the preferred Harness integration or another Agent and write or copy its configuration.
-4. Keep HyphenBox running; start a new Agent process and session, choose `free` and run your task.
+3. In Start using, choose Agent setup, image generation or video generation. Harness is the preferred Agent; media forms select a platform, stored key and model before generating and saving.
+
+After connecting an Agent, keep HyphenBox running, start a new Agent process and session, choose `free` and run your task. Direct media generation does not require an Agent connection.
 
 ## First launch and signatures
 
@@ -154,6 +169,8 @@ The macOS package uses a fixed local signature and has no Apple Developer ID sig
 Download only from this repository's releases and compare the supplied SHA-256 files. Updater signatures and operating-system commercial code signatures serve different purposes.
 
 ## API compatibility
+
+Media independently uses `/v1/images/generations`, `/v1/videos/generations` and `/v1/media/jobs`. Job reads and downloads require the local token; unfinished tasks are queried by their original IDs rather than resubmitted.
 
 The local token protects `/v1/models`, streaming `/v1/chat/completions`, `/v1/embeddings`, and compatibility conversions for `/v1/completions` and `/v1/responses`. Available features depend on the actual routes. Tool calls, reasoning signatures, multimodal inputs and output limits vary by model and protocol. Image, video, audio and reranking generation are not universally supported through the local chat endpoint. For truncated answers, inspect the recent-request budget and finish reason, then check client settings and provider limits.
 
@@ -169,6 +186,7 @@ The top-bar update control checks both the signed catalog and application releas
 - The control is collapsed by default under Client Setup → Improve user experience. Expand it to inspect the scope and state or disable reporting; your existing preference is preserved.
 - This repository contains downloads, documentation, screenshots and update metadata. Application source, the resource catalog, raw research/probe data, private service settings and signing private keys are not public here.
 - HyphenBox does not collect leaked keys, distribute shared accounts or bypass quotas. “Free API” means a provider-authorized entitlement, not permanent availability.
+Media prompts, upstream task IDs, responses and generated files remain on the device for recovery; private raw records are excluded from public screenshots and releases.
 <!-- evergreen:installation-privacy:end -->
 
 <!-- evergreen:use-cases:start -->
