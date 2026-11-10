@@ -1,0 +1,19 @@
+name: 清理已替代版本的发行记录
+on:
+  release:
+    types: [published, edited]
+  workflow_dispatch:
+  schedule:
+    - cron: "47 3 * * *"
+permissions:
+  contents: write
+concurrency:
+  group: release-record-retention
+  cancel-in-progress: false
+jobs:
+  retention:
+    uses: HackerChi-Hub/mac-quick-scripts/.github/workflows/release-records.yml@6fe136084d361e5eccfe8f605ac5a312915c58d7
+    with:
+      implementation_ref: 6fe136084d361e5eccfe8f605ac5a312915c58d7
+      release_repo: HackerChi-Hub/hyphenbox-release
+      report_tree: false
